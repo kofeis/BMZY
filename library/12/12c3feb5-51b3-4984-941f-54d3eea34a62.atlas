@@ -1,0 +1,34 @@
+
+dzfwhecheng03.png
+size: 309,110
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+绿色
+  rotate: false
+  xy: 2, 2
+  size: 106, 106
+  orig: 106, 106
+  offset: 0, 0
+  index: -1
+绿色箭头
+  rotate: false
+  xy: 218, 8
+  size: 89, 49
+  orig: 89, 49
+  offset: 0, 0
+  index: -1
+黄色
+  rotate: false
+  xy: 110, 2
+  size: 106, 106
+  orig: 106, 106
+  offset: 0, 0
+  index: -1
+黄色箭头
+  rotate: false
+  xy: 218, 59
+  size: 89, 49
+  orig: 89, 49
+  offset: 0, 0
+  index: -1

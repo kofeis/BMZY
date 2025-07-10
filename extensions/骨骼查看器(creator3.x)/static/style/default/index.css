@@ -1,0 +1,553 @@
+#app-root {
+    width: 100%;
+    height: 100%;
+    background-color: #454545;
+    box-sizing: border-box;
+    padding: 10px;
+    color: #bdbdbd;
+    animation: fade-in 0.3s;
+    animation-fill-mode: forwards;
+}
+
+/* 渐显 */
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* 主布局 */
+.layout {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 预览区 */
+.view {
+    width: 100%;
+    min-height: 0;
+    background-color: #4c4c4c;
+    position: relative;
+    flex: 1;
+}
+
+/* 画布 */
+.canvas {
+    width: 100%;
+    height: 100%;
+    background-color: #4c4c4c;
+}
+
+/* 版本号 */
+.version {
+    height: 16px;
+    opacity: 0.3;
+    position: absolute;
+    top: 4px;
+    right: 6px;
+    line-height: 16px;
+    font-size: 11px;
+    color: #bdbdbd;
+}
+
+/* 按钮容器 */
+.buttons {
+    height: 16px;
+    opacity: 0.5;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    display: flex;
+    flex-direction: row;
+}
+
+/* 按钮容器 > 子元素 */
+.buttons>* {
+    margin-right: 5px;
+}
+
+/* 信息,按钮 */
+.info,
+.button {
+    width: 16px;
+    height: 16px;
+    color: #bdbdbd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+/* 信息,按钮:虚指 */
+.info:hover,
+.button:hover {
+    color: #09f;
+}
+
+/* 按钮:激活 */
+.button:active {
+    color: #fd942b;
+}
+
+/* 信息,按钮 图标 */
+.info .icon,
+.button .icon {
+    width: 13px;
+    height: 13px;
+}
+
+/* 位置 */
+.position {
+    height: 13px;
+    opacity: 0.5;
+    position: absolute;
+    bottom: 4px;
+    right: 4px;
+    display: flex;
+    flex-direction: row;
+}
+
+/* 位置 文本 */
+.position .label {
+    margin-right: 2px;
+    line-height: 12px;
+    font-size: 11px;
+}
+
+/* 位置 按钮 */
+.position .button {
+    width: 13px;
+    height: 13px;
+}
+
+/* 位置 按钮 图标 */
+.position .button .icon {
+    width: 12px;
+    height: 12px;
+}
+
+/* 颜色 */
+.color {
+    height: 14px;
+    opacity: 1;
+    position: absolute;
+    bottom: 4px;
+    left: 4px;
+    display: flex;
+    flex-direction: row;
+}
+
+/* 颜色 子元素 */
+.color * {
+    width: 14px !important;
+    height: 14px !important;
+}
+
+/* 属性容器 */
+.properties {
+    width: 100%;
+    border: 1px solid #666;
+    border-radius: 3px;
+    padding: 5px;
+    box-sizing: border-box;
+    outline: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+}
+
+.properties>* {
+    margin: 2px 0;
+}
+
+.properties:first-child {
+    margin-top: 0;
+}
+
+.properties:last-child {
+    margin-bottom: 0;
+}
+
+/* 属性 */
+.property {
+    width: 100%;
+    min-height: 23px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+/* 属性标签 */
+.property>.label {
+    width: 38%;
+    min-width: 70px;
+    position: relative;
+    margin-left: 5px;
+    line-height: 23px;
+    font-size: 12px;
+    white-space: nowrap;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    flex-shrink: 0;
+    align-items: baseline;
+    justify-content: flex-start;
+}
+
+/* 属性标签文本:虚指 */
+.property:hover>.label>.text {
+    color: #09f;
+}
+
+/* 属性标签文本:聚焦内部 */
+.property:focus-within>.label>.text {
+    color: #fd942b;
+}
+
+/* 属性标签内容:聚焦内部 */
+.property:focus-within>.content>* {
+    border-color: #fd942b;
+}
+
+/* tooltip */
+.tooltip {
+    background-color: #333333;
+    padding: 5px 8px;
+    border: 1px solid #646464;
+    border-radius: 4px;
+    position: absolute;
+    top: -38px;
+    left: -5px;
+    visibility: hidden;
+    text-align: center;
+    z-index: 2;
+}
+
+/* tooltip 三角形 */
+.tooltip::before,
+.tooltip::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    position: absolute;
+    left: 10px;
+    transform: rotate(-90deg);
+}
+
+/* tooltip 三角形 */
+.tooltip::before {
+    border-right: 6px solid #333333;
+    top: 100%;
+}
+
+/* tooltip 三角形边框 */
+.tooltip::after {
+    border-right: 6px solid #646464;
+    top: calc(100% + 1px);
+    z-index: -1;
+}
+
+/* 前一个元素虚指时的 tooltip */
+*:hover+.tooltip {
+    visibility: visible;
+}
+
+/* 属性内容 */
+.property>.content {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.property>.content>* {
+    width: auto;
+    min-width: 20px;
+    height: 21px;
+    flex: 1;
+}
+
+.property>.content>*:focus {
+    border-color: #fd942b;
+}
+
+/* 提示 */
+.tip {
+    width: 100%;
+    min-height: 45px;
+    background: #333;
+    border: 1px solid #666;
+    border-radius: 3px;
+    padding: 12px 8px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    color: #bdbdbd;
+    line-height: 17px;
+    font-size: 13px;
+    white-space: pre-line;
+}
+
+.tip>* {
+    display: inline-block;
+}
+
+/* *::滚动条 */
+*::-webkit-scrollbar {
+    width: 11px;
+}
+
+/* *::滚动条-按钮 */
+*::-webkit-scrollbar-button {
+    display: none;
+}
+
+/* *::滚动条-横竖交汇处 */
+*::-webkit-scrollbar-corner {
+    display: none;
+}
+
+/* *::滚动条-轨道 */
+*::-webkit-scrollbar-track {
+    /* background: rgba(0, 0, 0, 0.5); */
+    background: none !important;
+    background-clip: content-box;
+    border: 5px solid transparent;
+}
+
+/* *::滚动条-滑块 */
+*::-webkit-scrollbar-thumb {
+    background: #7d7d7d;
+    background-clip: content-box;
+    border: 4px solid transparent;
+    border-radius: 6px;
+}
+
+/* *::滚动条-滑块:虚指 */
+*::-webkit-scrollbar-thumb:hover {
+    background-color: #fd942b;
+    border: 3px solid transparent;
+}
+
+/* 下拉选择器 */
+select {
+    background-color: #262626;
+    outline: none;
+    box-sizing: border-box;
+    border: 1px solid #171717;
+    border-radius: 100px;
+    padding: 0 8px;
+    font-size: 12px;
+    color: #bdbdbd;
+    cursor: pointer;
+    /* 替换默认的箭头 */
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAA+ElEQVRYR+2VXw6CMAzGV3YUjSZ6CsI4l3gutnALH/xzEB8spokSQphbiwkv5RHafb9+awuYlR9YWd8ogDqgDqgDPx3w3h8A4FlV1UOysLz3O2stlmV5j+VHAbqu2yLijRIR8VzXdcOBaNu2KYriRDl93x+dc5e5/ChACGFjjBnIORBj8Q/A3jl3ZQFQcAiBKhgqz4GYiqdyklPAgeCKU5FJgFwnJOLZACkIqTgLgILnhOj9t9slE5N1BePunUKMv6Uajj0Fsbmfg5CIs68g5oRUfBEAJdOqBYCXdFUvBuCsZva/4B+H55zBnoKcQzkxCqAOqAOrO/AGwnWWIa30xvoAAAAASUVORK5CYII=);
+    background-size: 16px;
+    background-repeat: no-repeat;
+    background-position: right 3px center;
+}
+
+/* 下拉选择器:虚指 */
+select:hover {
+    border-color: #888888;
+}
+
+/* 输入框,文本区域 */
+input,
+textarea {
+    background-color: #262626;
+    box-sizing: border-box;
+    padding: 0 5px;
+    border: 1px solid #171717;
+    border-radius: 3px;
+    color: #fd942b;
+    font-size: 12px;
+    outline: none;
+}
+
+/* 文本区域 */
+textarea {
+    min-height: 40px;
+    resize: vertical;
+}
+
+/* 输入框,文本区域::占位符 */
+input::placeholder,
+textarea::placeholder {
+    font-size: 12px;
+    font-style: normal;
+}
+
+/* 数字输入框 */
+input[type='number'] {
+    width: 50px !important;
+}
+
+/* 数字输入框::增减按钮 */
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+    /* appearance: none; */
+    /* -webkit-appearance: none; */
+    /* margin: 0; */
+    margin-right: -2px;
+}
+
+/* 复选框 */
+input[type='checkbox'] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 16px !important;
+    height: 16px !important;
+    min-width: 16px !important;
+    background-image: none;
+    background-color: #262626;
+    border: 1px solid #171717;
+    border-radius: 3px;
+    padding-left: 0;
+    position: relative !important;
+    flex: 0 !important;
+    margin: 0;
+    color: #fd942b;
+    outline: none;
+    cursor: pointer;
+}
+
+/* 复选框:勾选 */
+input[type='checkbox']:checked::after {
+    width: 12px;
+    height: 12px;
+    display: inline-block;
+    content: '';
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABKUlEQVRYR+2W2w2DMAxF41ZdBnWzqjMQZkBdjWUqkiqUgCHOO4Ef+EECwTlO7AvATj7gZD67BA5bgW/fcLXdj/cwnfVxiMD4aVomYQILKTssUV0Aw3XVWKKqgFr2G0BLTZqWqCbggq8NIHkVgSD43A/FBag9J8MOJL+/hq6oQGjlbIYrMUNAVSAEg/28+iI7BW4IuObVJZAK3wj45tUmkANfBFyNs08uLBIKd70DgroWNY0WKAGfVmBUHwlLWuFqcRWl4OsWREioh2zxuukTYtWoPlrGcOyfnIEkc9s3gsb9QLg5hiUkIuB0EOVIRMJJAXUxaTsS4FaBaIlEuFMgWCID7hXwSmTCgwSsEgXgwQJ/CZSYheBRAlpCEP/20UGFHij6R5Qicgn8AIQ23JRIyuB1AAAAAElFTkSuQmCC);
+    background-size: 12px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* 输入框:虚指 */
+input:hover {
+    border-color: #888888;
+}
+
+/* 滑动条 */
+input[type='range'] {
+    appearance: none;
+    -webkit-appearance: none;
+    height: 4px !important;
+    background-color: #262626;
+    border: 1px solid #171717;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* 滑动条:虚指|聚焦 */
+input[type='range']:hover,
+input[type='range']:focus,
+*:focus-within input[type='range'] {
+    border-color: #171717 !important;
+}
+
+/* 滑动条::把手 */
+input[type='range']::-webkit-slider-thumb {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 12px;
+    height: 12px;
+    top: 2px;
+    background: #333;
+    box-sizing: border-box;
+    border: 2px solid #949494;
+    box-shadow: 0 1px 3px 1px #000 inset, 0 1px 1px 0 rgba(0, 0, 0, 0.9);
+    border-radius: 100%;
+}
+
+/* 滑动条::把手:虚指 */
+input[type='range']::-webkit-slider-thumb:hover {
+    border-color: #bcbcbc;
+    cursor: pointer;
+}
+
+/* 滑动条::把手:激活 */
+input[type='range']::-webkit-slider-thumb:active,
+*:focus-within>input[type='range']::-webkit-slider-thumb {
+    color: #bdbdbd;
+    border-color: #fd942b !important;
+    cursor: ew-resize;
+}
+
+/* 取色器 */
+input[type='color'] {
+    width: 16px;
+    height: 16px;
+    box-sizing: border-box;
+    border-radius: 1px;
+    padding: 0;
+    cursor: pointer;
+}
+
+/* 取色器::色板容器 */
+input[type='color']::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+
+/* 取色器::色板 */
+input[type='color']::-webkit-color-swatch {
+    border: none;
+}
+
+/* 超链接 */
+a {
+    color: #fd942b;
+    text-decoration: none;
+}
+
+/* 超链接:虚指 */
+a:hover {
+    text-decoration: underline;
+}
+
+/* 分割线 */
+hr {
+    width: 100%;
+    height: 1px;
+    background-color: #666;
+    border: none;
+    margin: 10px 0 !important;
+}
+
+:root {
+    /* 背景颜色 */
+    --eazax-bg-color: #454545;
+    /* 主颜色 */
+    --eazax-main-color: #262626;
+    /* 强调色 */
+    --eazax-accent-color: #2e88fb;
+    /* 聚焦色 */
+    --eazax-focus-color: #fd942b;
+    /* 边框调色 */
+    --eazax-border-color: #171717;
+    /* 边框虚指调色 */
+    --eazax-border-hover-color: #888888;
+    /* 文本颜色 */
+    --eazax-font-color: #bdbdbd;
+    /* 内容颜色 */
+    --eazax-content-color: #fd942b;
+}

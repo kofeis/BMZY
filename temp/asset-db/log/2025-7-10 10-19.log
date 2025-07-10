@@ -1,0 +1,592 @@
+2025-7-10 10:19:28-debug: start **** info
+2025-7-10 10:19:28-log: Cannot access game frame or container.
+2025-7-10 10:19:29-debug: asset-db:require-engine-code (1454ms)
+2025-7-10 10:19:29-log: meshopt wasm decoder initialized
+2025-7-10 10:19:29-log: [bullet]:bullet wasm lib loaded.
+2025-7-10 10:19:29-log: [box2d]:box2d wasm lib loaded.
+2025-7-10 10:19:29-log: Cocos Creator v3.8.6
+2025-7-10 10:19:29-log: Using legacy pipeline
+2025-7-10 10:19:29-debug: [Assets Memory track]: asset-db-plugin-register: programming start:80.89MB, end 83.35MB, increase: 2.45MB
+2025-7-10 10:19:31-debug: [Assets Memory track]: asset-db-plugin-register: builder start:83.37MB, end 197.42MB, increase: 114.05MB
+2025-7-10 10:19:31-debug: [Assets Memory track]: asset-db-plugin-register: project start:80.76MB, end 194.88MB, increase: 114.12MB
+2025-7-10 10:19:31-debug: [Assets Memory track]: asset-db:worker-init: initPlugin start:79.83MB, end 194.94MB, increase: 115.10MB
+2025-7-10 10:19:29-log: Forward render pipeline initialized.
+2025-7-10 10:19:29-debug: [Assets Memory track]: asset-db:worker-init: initEngine start:28.95MB, end 79.81MB, increase: 50.86MB
+2025-7-10 10:19:31-debug: asset-db:worker-init: initPlugin (2145ms)
+2025-7-10 10:19:31-debug: [Assets Memory track]: asset-db:worker-init start:28.94MB, end 195.01MB, increase: 166.07MB
+2025-7-10 10:19:31-debug: Run asset db hook programming:beforePreStart ...
+2025-7-10 10:19:31-debug: Run asset db hook programming:beforePreStart success!
+2025-7-10 10:19:31-debug: Run asset db hook engine-extends:beforePreStart success!
+2025-7-10 10:19:31-debug: Run asset db hook engine-extends:beforePreStart ...
+2025-7-10 10:19:34-debug: asset-db:worker-init (6129ms)
+2025-7-10 10:19:34-debug: asset-db-hook-programming-beforePreStart (2309ms)
+2025-7-10 10:19:34-debug: asset-db-hook-engine-extends-beforePreStart (2309ms)
+2025-7-10 10:19:35-debug: Preimport db internal success
+2025-7-10 10:19:35-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Loadbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:35-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\resourcesbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:35-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Prefabbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:35-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Scenebackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:35-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Scriptbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:35-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\SpriteFramebackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:35-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\Effectbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:35-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\AnimationClipbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:35-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\Audiobackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:35-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\Fontbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:35-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\Jsonbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:35-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\Prefabbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:35-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFramebackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:35-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\Spinebackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:35-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\Scenebackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:35-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Script\Buttonbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:35-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Script\Modebackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:35-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Script\Gamebackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:35-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Script\Otherbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:35-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Script\Toolbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:35-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Script\UIbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:35-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\SpriteFrame\Mainbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:35-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\SpriteFrame\0background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:35-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\AnimationClip\X Zone宝箱动画jsonbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:35-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\AnimationClip\MathMatchbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:35-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\Audio\Soundbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:35-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatchbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:35-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\Prefab\PanelMathMatchbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:35-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\Panelbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:35-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Script\Game\GameModebackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:35-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Script\Mode\Jump_Stringbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:35-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Script\Other\folderbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:35-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Script\Other\GeSdkbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:35-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Script\Other\SDKbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:35-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\SpriteFrame\0\creditsbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:35-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\SpriteFrame\0\custombackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:35-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\SpriteFrame\0\standardbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:35-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\AnimationClip\MathMatch\folderbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:35-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\Hallbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:35-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\Mainbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:35-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P11_飙升background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:35-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P10_成功background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:35-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P6_游戏background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:35-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P4_邀请background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:35-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P5_每日background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:35-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P8_复活background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:35-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P7_提示background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:35-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P9_失败background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:35-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\通用文件background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:35-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\Setbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:35-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\Panel\PanelMathMatchbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:35-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\Effect\BurnOut.chunkbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:35-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Script\Button\Btn_Script.tsbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:35-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Script\Button\Scene_Change_Script.tsbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:35-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Script\Game\Game_Script.tsbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:35-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Script\Game\Game_Script_Template.tsbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:35-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\Effect\sprite-BurnOut.effectbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:36-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Script\Game\Login.tsbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:36-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Script\Game\Resoure_Data_Template.tsbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:36-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Script\Other\Debugger.tsbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:36-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Script\Other\OpenContext.tsbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:36-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Script\Other\Tool_Script.tsbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:36-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Script\Tool\Tool_Animation.tsbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:36-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Script\Tool\Resoure_Data.tsbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:36-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Script\Tool\Tool_Console.tsbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:36-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Script\Tool\Tool_Event.tsbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:36-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Script\Tool\Tool_NetWork.tsbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:36-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Script\Tool\Tool_RigidBody.tsbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:36-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Script\Tool\Tool_Other.tsbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:36-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Script\UI\Bg.tsbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:36-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Script\Tool\Tool_UI.tsbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:36-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Script\UI\ScreenArea.tsbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:36-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Script\Game\GameMode\PanelDish.tsbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:36-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Script\Game\GameMode\PanelIdiom.tsbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:36-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Script\Game\GameMode\PanelFindActor.tsbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:36-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Script\Game\GameMode\PanelFilm.tsbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:36-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Script\Game\GameMode\PanelMathMatch.tsbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:36-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Script\Game\GameMode\PanelMathMatch_.tsbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:36-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Script\Mode\Jump_String\Jump_String_Script.tsbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:36-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Script\Other\folder\LoginLayer.tsbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:36-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Script\Game\GameMode\PanelTemplate.tsbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:36-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Script\Other\folder\WechatManager.tsbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:36-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Script\Other\GeSdk\GravityAnalyticsSDK.d.tsbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:36-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Script\Other\GeSdk\GravityPlatform.tsbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:36-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Script\Other\SDK\HttpRequest.tsbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:36-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Script\Other\SDK\PlatformApi.tsbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:36-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Script\Other\SDK\wx.d.tsbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:36-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Script\Other\SDK\WxApi.tsbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:36-debug: Preimport db assets success
+2025-7-10 10:19:36-debug: Run asset db hook programming:afterPreStart ...
+2025-7-10 10:19:36-debug: starting packer-driver...
+2025-7-10 10:19:45-debug: initialize scripting environment...
+2025-7-10 10:19:46-debug: [[Executor]] prepare before lock
+2025-7-10 10:19:46-debug: Set detail map pack:///resolution-detail-map.json: {}
+2025-7-10 10:19:46-debug: Run asset db hook programming:afterPreStart success!
+2025-7-10 10:19:46-debug: [[Executor]] prepare after unlock
+2025-7-10 10:19:46-debug: Run asset db hook engine-extends:afterPreStart ...
+2025-7-10 10:19:46-debug: asset-db-hook-programming-afterPreStart (9970ms)
+2025-7-10 10:19:47-debug: recompile effect.bin success
+2025-7-10 10:19:47-debug: Run asset db hook engine-extends:afterPreStart success!
+2025-7-10 10:19:47-debug: Start up the 'internal' database...
+2025-7-10 10:19:48-debug: asset-db:worker-effect-data-processing (2794ms)
+2025-7-10 10:19:48-debug: asset-db-hook-engine-extends-afterPreStart (2795ms)
+2025-7-10 10:19:48-debug: Start up the 'assets' database...
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Prefab\Progress.prefabbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Scene\Main.scenebackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\SpriteFrame\New Piskel.jsonbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: asset-db:worker-startup-database[internal] (18261ms)
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\Audio\AddScore.mp3background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\SpriteFrame\New Piskel.pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\Audio\BgmGame.mp3background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\Audio\BoxStart.mp3background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\Audio\BoxEnd.mp3background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\SpriteFrame\New Piskel.png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\SpriteFrame\New Piskel.png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\Audio\BtnClick.mp3background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\Audio\Correct.mp3background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\Audio\Failed.mp3background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\Audio\FH.mp3background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\Audio\NumClick.mp3background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\Audio\PropA.mp3background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\Audio\PropGet.mp3background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\Audio\Start1.mp3background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\Audio\Start3.mp3background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\Audio\Start2.mp3background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\Audio\Victory.mp3background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\Audio\Wrong.mp3background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\Effect\BurnOut_Material.mtlbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\Font\AlimamaShuHeiTi-Bold.ttfbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\Font\bmfont.fntbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\Font\bmfont.pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\Font\yuan1.fntbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\Json\0.jsonbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\Font\yuan1.pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\Json\mathmatch.jsonbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\Font\bmfont.png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\Scene\GameMathMatch.scenebackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\Font\bmfont.png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\Scene\Hall.scenebackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\Font\yuan1.png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\Scene\Login.scenebackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\Font\yuan1.png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\Scene\MainMathMatch.scenebackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\Spine\caidai.jsonbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\Spine\caidai.atlasbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\Spine\dzfwhecheng03.atlasbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\Spine\caidai.pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\Spine\dzfwhecheng03.jsonbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\Spine\tishi.atlasbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\Spine\dzfwhecheng03.pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\Spine\tishi.jsonbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\Spine\caidai.png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\Spine\caidai.png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-log: UUID is initialized for D:\Cocos\XHAT\BMZY\assets\Load\Spine\dzfwhecheng03.png.
+2025-7-10 10:19:50-log: UUID is initialized for D:\Cocos\XHAT\BMZY\assets\Load\Spine\caidai.png.
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\Spine\dzfwhecheng03.png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\Spine\dzfwhecheng03.png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\SpriteFrame\0\character.jsonbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-log: UUID is initialized for D:\Cocos\XHAT\BMZY\assets\Load\Spine\tishi.png.
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\Spine\tishi.pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\AnimationClip\MathMatch\doudong.animbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\SpriteFrame\Main\New Piskel.jsonbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\SpriteFrame\Main\Bg.pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\AnimationClip\MathMatch\GZ.animbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\Spine\tishi.png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\Spine\tishi.png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\AnimationClip\MathMatch\Hand.animbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\AnimationClip\MathMatch\HandMM.animbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\SpriteFrame\Main\Bg.png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\AnimationClip\MathMatch\JINGGAO.animbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\AnimationClip\MathMatch\Light.animbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\SpriteFrame\Main\Bg.png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\AnimationClip\MathMatch\ND.animbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\AnimationClip\MathMatch\ResurAd.animbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\AnimationClip\MathMatch\Timer.animbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\AnimationClip\MathMatch\XINGXING.animbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\AnimationClip\X Zone宝箱动画json\baoxiang.jsonbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\AnimationClip\X Zone宝箱动画json\baoxiang.atlasbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\Prefab\PanelMathMatch\KeyShadow.prefabbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\Prefab\PanelMathMatch\Icon.prefabbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\AnimationClip\X Zone宝箱动画json\baoxiang.pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\Prefab\PanelMathMatch\PanelMathMatch.prefabbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\Prefab\PanelMathMatch\Spine.prefabbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\MR.pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-log: UUID is initialized for D:\Cocos\XHAT\BMZY\assets\Load\AnimationClip\X Zone宝箱动画json\baoxiang.png.
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\AnimationClip\X Zone宝箱动画json\baoxiang.png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\AnimationClip\X Zone宝箱动画json\baoxiang.png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Script\Other\GeSdk\gravityengine.mg.cocoscreator.min.jsbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\YQ.pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\SpriteFrame\0\credits\credits.csvbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\SpriteFrame\0\credits\credits.txtbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\SpriteFrame\0\credits\metadata.jsonbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\MR.png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\MR.png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\YQ.png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\YQ.png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\SpriteFrame\0\standard\backslash.pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\SpriteFrame\0\standard\climb.pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\SpriteFrame\0\standard\combat_idle.pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\SpriteFrame\0\standard\emote.pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\SpriteFrame\0\standard\halfslash.pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\SpriteFrame\0\standard\backslash.png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\SpriteFrame\0\standard\backslash.png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\SpriteFrame\0\standard\combat_idle.png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\SpriteFrame\0\standard\climb.png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\SpriteFrame\0\standard\combat_idle.png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\SpriteFrame\0\standard\climb.png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\SpriteFrame\0\standard\emote.png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\SpriteFrame\0\standard\emote.png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\SpriteFrame\0\standard\halfslash.png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\SpriteFrame\0\standard\hurt.pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\SpriteFrame\0\standard\idle.pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\SpriteFrame\0\standard\halfslash.png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\SpriteFrame\0\standard\jump.pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\SpriteFrame\0\standard\run.pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\SpriteFrame\0\standard\idle.png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\SpriteFrame\0\standard\hurt.png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\SpriteFrame\0\standard\shoot.pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\SpriteFrame\0\standard\idle.png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\SpriteFrame\0\standard\hurt.png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\SpriteFrame\0\standard\jump.png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\SpriteFrame\0\standard\run.png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\SpriteFrame\0\standard\jump.png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\SpriteFrame\0\standard\sit.pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\SpriteFrame\0\standard\run.png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\SpriteFrame\0\standard\slash.pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\SpriteFrame\0\standard\shoot.png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\SpriteFrame\0\standard\shoot.png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\SpriteFrame\0\standard\spellcast.pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\SpriteFrame\0\standard\thrust.pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\SpriteFrame\0\standard\sit.png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\SpriteFrame\0\standard\slash.png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\SpriteFrame\0\standard\sit.png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\SpriteFrame\0\standard\walk.pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\SpriteFrame\0\standard\slash.png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\AnimationClip\MathMatch\folder\ResurAd.animbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\SpriteFrame\0\standard\spellcast.png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\SpriteFrame\0\standard\thrust.png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\SpriteFrame\0\standard\spellcast.png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\Hall\Logo.pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\SpriteFrame\0\standard\thrust.png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\SpriteFrame\0\standard\walk.png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\SpriteFrame\0\standard\walk.png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\Hall\Sp (4).pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\Hall\Logo.png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\Hall\Sp (5).pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\Hall\Sp (7).pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\Hall\Logo.png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\Main\Bg.pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\Hall\Sp (4).png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\Hall\Sp (4).png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\Hall\Sp (5).png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\Main\Bg_Texture.pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\Hall\Sp (5).png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\Hall\Sp (7).png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\Hall\Sp (7).png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\Main\Bg.png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:50-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\Main\Logo.pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\Main\Bg.png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\Main\ProgressBar.pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\Main\Bg_Texture.png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\Main\ProgressBg.pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\Main\Bg_Texture.png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\Main\Logo.png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\Main\ProgressBar.png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\Main\Logo.png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\Main\ProgressBg.png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\Main\ProgressBar.png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\Main\Text_ZG.pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\Main\ProgressBg.png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\Main\Text_ZSJZZ.pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P10_成功\0.pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\Main\Text_ZG.png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P10_成功\Sp (1).pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P10_成功\Sp (3).pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\Main\Text_ZG.png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\Main\Text_ZSJZZ.png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\Main\Text_ZSJZZ.png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P10_成功\0.png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P10_成功\Sp (1).png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P10_成功\0.png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P10_成功\Sp (4).pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P10_成功\Sp (1).png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P10_成功\Sp (3).png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P10_成功\Sp (3).png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P10_成功\Sp (5).pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P10_成功\Sp (6).pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P10_成功\Sp (4).png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P11_飙升\1.pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P11_飙升\Sp (1).pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P10_成功\Sp (5).png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P10_成功\Sp (4).png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P10_成功\Sp (5).png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P10_成功\Sp (6).png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P11_飙升\Sp (1).png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P11_飙升\1.png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P10_成功\Sp (6).png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P11_飙升\Sp (1).png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P11_飙升\1.png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P11_飙升\Sp (2).pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P11_飙升\Sp (3).pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P11_飙升\Sp (4).pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P4_邀请\Sp (1).pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P4_邀请\Sp (4).pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P11_飙升\Sp (3).png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P11_飙升\Sp (3).png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P11_飙升\Sp (2).png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P11_飙升\Sp (2).png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P4_邀请\Sp (1).png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P11_飙升\Sp (4).png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P4_邀请\Sp (5).pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P11_飙升\Sp (4).png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P4_邀请\Sp (1).png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P4_邀请\Sp (4).png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P4_邀请\Sp (4).png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P5_每日\00.pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P5_每日\123.pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P4_邀请\Sp (5).png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P4_邀请\Sp (5).png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P5_每日\ok.pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P5_每日\00.png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P5_每日\123.png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P5_每日\00.png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P5_每日\123.png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P5_每日\P6_游戏.pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P5_每日\Sp (1).pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P5_每日\ok.png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P5_每日\ok.png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P6_游戏\Sp (1).pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P5_每日\P6_游戏.png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P5_每日\Sp (1).png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P6_游戏\Sp (3).pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P5_每日\P6_游戏.png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P5_每日\Sp (1).png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P6_游戏\Sp (1).png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P6_游戏\Sp (5).pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P6_游戏\Sp (4).pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P6_游戏\Sp (1).png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P6_游戏\Sp (6).pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P6_游戏\Sp (3).png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P6_游戏\Sp (3).png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P6_游戏\Sp (7).pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P6_游戏\Sp (4).png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P6_游戏\Sp (5).png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P6_游戏\Sp (5).png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P6_游戏\Sp (4).png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P6_游戏\Sp (6).png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P6_游戏\Sp (8).pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P6_游戏\Sp (6).png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P6_游戏\Sp (7).png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P7_提示\0.pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P6_游戏\Sp (7).png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P6_游戏\Sp (8).png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P7_提示\Sp (1).pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P7_提示\Sp (3).pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P6_游戏\Sp (8).png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P7_提示\0.png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P7_提示\0.png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P8_复活\22.pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P8_复活\Sp (1).pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P7_提示\Sp (1).png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P7_提示\Sp (3).png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P8_复活\Sp (3).pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P7_提示\Sp (3).png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P7_提示\Sp (1).png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P8_复活\22.png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P8_复活\Sp (1).png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P9_失败\Sp (1).pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P8_复活\22.png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P9_失败\Sp (2).pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P8_复活\Sp (1).png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P8_复活\Sp (3).png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P8_复活\Sp (3).png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P9_失败\Sp (4).pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P9_失败\Sp (5).pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P9_失败\Sp (1).png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P9_失败\Sp (2).png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P9_失败\Sp (1).png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P9_失败\Sp (6).pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P9_失败\Sp (2).png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P9_失败\Sp (5).png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P9_失败\Sp (4).png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P9_失败\Sp (5).png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P9_失败\Sp (4).png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\Set\Icon_Music.pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P9_失败\Sp (6).png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\P9_失败\Sp (6).png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\Set\Icon_Vibration.pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\Set\Icon_Sound.pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\Set\Off.pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\Set\Icon_Music.png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\Set\Icon_Music.png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\Set\On.pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\Set\Icon_Vibration.png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\Set\Icon_Sound.png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\Set\Off.png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\Set\Icon_Sound.png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\Set\Icon_Vibration.png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\Set\Off.png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\Set\Sp (11).pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\Set\On.png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\Set\Text_Music.pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\Set\Text_Set.pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\Set\On.png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\Set\Text_Sound.pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\Set\Sp (11).png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\Set\Sp (11).png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\通用文件\Sp (1).pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\Set\Text_Set.png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\Set\Text_Music.png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\Set\Text_Set.png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\Set\Text_Sound.png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\Set\Text_Music.png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\通用文件\Sp (10).pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\Set\Text_Sound.png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\通用文件\Sp (1).png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\通用文件\Sp (11).pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\通用文件\Sp (12).pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\通用文件\Sp (1).png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\通用文件\Sp (13).pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\通用文件\Sp (10).png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\通用文件\Sp (10).png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\通用文件\Sp (14).pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\通用文件\Sp (11).png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\通用文件\Sp (12).png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\通用文件\Sp (13).png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\通用文件\Sp (12).png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\通用文件\Sp (13).png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\通用文件\Sp (11).png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\通用文件\Sp (15).pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\通用文件\Sp (14).png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\通用文件\Sp (14).png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\通用文件\Sp (16).pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\通用文件\Sp (17).pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\通用文件\Sp (18).pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\通用文件\Sp (15).png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\通用文件\Sp (15).png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\通用文件\Sp (2).pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\通用文件\Sp (17).png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\通用文件\Sp (16).png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\通用文件\Sp (18).png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\通用文件\Sp (17).png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\通用文件\Sp (16).png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\通用文件\Sp (18).png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\通用文件\Sp (2).png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\通用文件\Sp (2).png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\通用文件\Sp (3).pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\通用文件\Sp (4).pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\通用文件\Sp (5).pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\通用文件\Sp (6).pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\通用文件\Sp (7).pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\通用文件\Sp (3).png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\通用文件\Sp (3).png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\通用文件\Sp (4).png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\通用文件\Sp (4).png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\通用文件\Sp (6).png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\通用文件\Sp (7).png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\通用文件\Sp (5).png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\通用文件\Sp (6).png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\通用文件\Sp (7).png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\通用文件\Sp (5).png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\通用文件\Sp (8).pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\通用文件\Sp (9).pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\Panel\PanelMathMatch\Bg.pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\Panel\PanelMathMatch\Bgg.pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\Panel\PanelMathMatch\BoxC.pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\通用文件\Sp (8).png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\通用文件\Sp (9).png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\通用文件\Sp (8).png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\MathMatch\通用文件\Sp (9).png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\Panel\PanelMathMatch\Bg.png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\Panel\PanelMathMatch\Bgg.png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\Panel\PanelMathMatch\Bg.png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\Panel\PanelMathMatch\Bgg.png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\Panel\PanelMathMatch\BoxC.png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\Panel\PanelMathMatch\BoxE.pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\Panel\PanelMathMatch\BoxN.pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\Panel\PanelMathMatch\BoxC.png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\Panel\PanelMathMatch\BoxU.pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\Panel\PanelMathMatch\Sp (13).pngbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\Panel\PanelMathMatch\BoxN.png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\Panel\PanelMathMatch\BoxE.png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\Panel\PanelMathMatch\BoxN.png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\Panel\PanelMathMatch\BoxE.png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\Panel\PanelMathMatch\Sp (13).png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\Panel\PanelMathMatch\Sp (13).png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\Panel\PanelMathMatch\BoxU.png@6c48abackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\SpriteFrame\Panel\PanelMathMatch\BoxU.png@f9941background: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\Font\bmfont.fntbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\Font\yuan1.fntbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\Spine\dzfwhecheng03.jsonbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\Spine\tishi.jsonbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-debug: %cImport%c: D:\Cocos\XHAT\BMZY\assets\Load\AnimationClip\X Zone宝箱动画json\baoxiang.jsonbackground: #aaff85; color: #000;color: #000;
+2025-7-10 10:19:51-log: UUID is initialized for D:\Cocos\XHAT\BMZY\assets\Load\AnimationClip\X Zone宝箱动画json\baoxiang.png.
+2025-7-10 10:19:51-log: UUID is initialized for D:\Cocos\XHAT\BMZY\assets\Load\Spine\dzfwhecheng03.png.
+2025-7-10 10:19:51-log: UUID is initialized for D:\Cocos\XHAT\BMZY\assets\Load\Spine\tishi.png.
+2025-7-10 10:19:51-debug: [Assets Memory track]: asset-db:worker-startup-database[assets] start:198.51MB, end 202.35MB, increase: 3.84MB
+2025-7-10 10:19:51-debug: lazy register asset handler directory
+2025-7-10 10:19:51-debug: [Assets Memory track]: asset-db:worker-init: startup start:187.65MB, end 202.36MB, increase: 14.71MB
+2025-7-10 10:19:51-debug: lazy register asset handler json
+2025-7-10 10:19:51-debug: lazy register asset handler *
+2025-7-10 10:19:51-debug: lazy register asset handler spine-data
+2025-7-10 10:19:51-debug: lazy register asset handler text
+2025-7-10 10:19:51-debug: lazy register asset handler dragonbones
+2025-7-10 10:19:51-debug: lazy register asset handler dragonbones-atlas
+2025-7-10 10:19:51-debug: lazy register asset handler terrain
+2025-7-10 10:19:51-debug: lazy register asset handler javascript
+2025-7-10 10:19:51-debug: lazy register asset handler scene
+2025-7-10 10:19:51-debug: lazy register asset handler prefab
+2025-7-10 10:19:51-debug: lazy register asset handler typescript
+2025-7-10 10:19:51-debug: lazy register asset handler sprite-frame
+2025-7-10 10:19:51-debug: lazy register asset handler buffer
+2025-7-10 10:19:51-debug: lazy register asset handler image
+2025-7-10 10:19:51-debug: lazy register asset handler tiled-map
+2025-7-10 10:19:51-debug: lazy register asset handler alpha-image
+2025-7-10 10:19:51-debug: lazy register asset handler texture-cube
+2025-7-10 10:19:51-debug: lazy register asset handler erp-texture-cube
+2025-7-10 10:19:51-debug: lazy register asset handler texture
+2025-7-10 10:19:51-debug: lazy register asset handler sign-image
+2025-7-10 10:19:51-debug: lazy register asset handler rt-sprite-frame
+2025-7-10 10:19:51-debug: lazy register asset handler render-texture
+2025-7-10 10:19:51-debug: lazy register asset handler texture-cube-face
+2025-7-10 10:19:51-debug: lazy register asset handler gltf-animation
+2025-7-10 10:19:51-debug: lazy register asset handler gltf-mesh
+2025-7-10 10:19:51-debug: lazy register asset handler gltf-material
+2025-7-10 10:19:51-debug: lazy register asset handler gltf
+2025-7-10 10:19:51-debug: lazy register asset handler gltf-skeleton
+2025-7-10 10:19:51-debug: lazy register asset handler gltf-embeded-image
+2025-7-10 10:19:51-debug: lazy register asset handler fbx
+2025-7-10 10:19:51-debug: lazy register asset handler gltf-scene
+2025-7-10 10:19:51-debug: lazy register asset handler physics-material
+2025-7-10 10:19:51-debug: lazy register asset handler effect-header
+2025-7-10 10:19:51-debug: lazy register asset handler effect
+2025-7-10 10:19:51-debug: lazy register asset handler audio-clip
+2025-7-10 10:19:51-debug: lazy register asset handler animation-clip
+2025-7-10 10:19:51-debug: lazy register asset handler animation-graph
+2025-7-10 10:19:51-debug: lazy register asset handler animation-graph-variant
+2025-7-10 10:19:51-debug: lazy register asset handler ttf-font
+2025-7-10 10:19:51-debug: lazy register asset handler material
+2025-7-10 10:19:51-debug: lazy register asset handler animation-mask
+2025-7-10 10:19:51-debug: lazy register asset handler sprite-atlas
+2025-7-10 10:19:51-debug: lazy register asset handler particle
+2025-7-10 10:19:51-debug: lazy register asset handler bitmap-font
+2025-7-10 10:19:51-debug: lazy register asset handler render-pipeline
+2025-7-10 10:19:51-debug: lazy register asset handler auto-atlas
+2025-7-10 10:19:51-debug: lazy register asset handler label-atlas
+2025-7-10 10:19:51-debug: lazy register asset handler instantiation-material
+2025-7-10 10:19:51-debug: lazy register asset handler render-flow
+2025-7-10 10:19:51-debug: lazy register asset handler render-stage
+2025-7-10 10:19:51-debug: lazy register asset handler instantiation-skeleton
+2025-7-10 10:19:51-debug: lazy register asset handler instantiation-animation
+2025-7-10 10:19:51-debug: lazy register asset handler instantiation-mesh
+2025-7-10 10:19:51-debug: lazy register asset handler video-clip
+2025-7-10 10:19:51-debug: asset-db:worker-startup-database[assets] (16510ms)
+2025-7-10 10:19:51-debug: asset-db:start-database (19875ms)
+2025-7-10 10:19:51-debug: asset-db:ready (28218ms)
+2025-7-10 10:19:51-debug: fix the bug of updateDefaultUserData
+2025-7-10 10:19:51-debug: init worker message success
+2025-7-10 10:19:52-debug: [Build Memory track]: builder:worker-init start:199.13MB, end 210.95MB, increase: 11.81MB
+2025-7-10 10:19:52-debug: programming:execute-script (17ms)
+2025-7-10 10:19:52-debug: builder:worker-init (658ms)
+2025-7-10 10:21:35-debug: refresh db internal success
+2025-7-10 10:21:36-debug: refresh db assets success
+2025-7-10 10:21:36-debug: Run asset db hook engine-extends:afterRefresh ...
+2025-7-10 10:21:36-debug: Run asset db hook engine-extends:afterRefresh success!
+2025-7-10 10:21:36-debug: asset-db:refresh-all-database (166ms)
+2025-7-10 10:21:36-debug: asset-db:worker-effect-data-processing (1ms)
+2025-7-10 10:21:36-debug: asset-db-hook-engine-extends-afterRefresh (2ms)

@@ -1,0 +1,113 @@
+[
+    1,
+    [
+        "74PIWCAMZLBr5GVBY7hKjE@6c48a"
+    ],
+    [
+        "_textureSource"
+    ],
+    [
+        "cc.SpriteFrame"
+    ],
+    0,
+    [
+        {
+            "name": "Title_Bg",
+            "rect": {
+                "x": 0,
+                "y": 0,
+                "width": 303,
+                "height": 104
+            },
+            "offset": {
+                "x": 0,
+                "y": 0
+            },
+            "originalSize": {
+                "width": 303,
+                "height": 104
+            },
+            "rotated": false,
+            "capInsets": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "vertices": {
+                "rawPosition": [
+                    -151.5,
+                    -52,
+                    0,
+                    151.5,
+                    -52,
+                    0,
+                    -151.5,
+                    52,
+                    0,
+                    151.5,
+                    52,
+                    0
+                ],
+                "indexes": [
+                    0,
+                    1,
+                    2,
+                    2,
+                    1,
+                    3
+                ],
+                "uv": [
+                    0,
+                    104,
+                    303,
+                    104,
+                    0,
+                    0,
+                    303,
+                    0
+                ],
+                "nuv": [
+                    0,
+                    0,
+                    1,
+                    0,
+                    0,
+                    1,
+                    1,
+                    1
+                ],
+                "minPos": {
+                    "x": -151.5,
+                    "y": -52,
+                    "z": 0
+                },
+                "maxPos": {
+                    "x": 151.5,
+                    "y": 52,
+                    "z": 0
+                }
+            },
+            "packable": true,
+            "pixelsToUnit": 100,
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            },
+            "meshType": 0
+        }
+    ],
+    [
+        0
+    ],
+    0,
+    [
+        0
+    ],
+    [
+        0
+    ],
+    [
+        0
+    ]
+]

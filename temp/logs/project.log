@@ -1,0 +1,27 @@
+2025-7-10 10:19:12 - warn: Recovery window failed.
+2025-7-10 10:19:12 - warn: The window data is invalid.Error: The window data is invalid.
+    at Object.<anonymous> (D:\Cocos\editors\Creator\3.8.6\resources\app.asar\node_modules\@editor\creator\dist\windows\protected\browser.ccc:1:4289)
+    at Generator.next (<anonymous>)
+    at s (D:\Cocos\editors\Creator\3.8.6\resources\app.asar\node_modules\@editor\creator\dist\windows\protected\browser.ccc:1:131)
+2025-7-10 10:19:20 - log: Load engine in D:\Cocos\editors\Creator\3.8.6\resources\resources\3d\engine
+2025-7-10 10:19:21 - log: Register native engine in D:\Cocos\editors\Creator\3.8.6\resources\resources\3d\engine\native
+2025-7-10 10:19:22 - log: Request namespace: device-list
+2025-7-10 10:19:52 - log: [Scene] meshopt wasm decoder initialized
+2025-7-10 10:19:52 - log: [Scene] [box2d]:box2d wasm lib loaded.
+2025-7-10 10:19:52 - log: [Scene] [bullet]:bullet wasm lib loaded.
+2025-7-10 10:19:52 - log: [Scene] [PHYSICS]: using builtin.
+2025-7-10 10:19:53 - log: [Scene] Cocos Creator v3.8.6
+2025-7-10 10:19:54 - log: [Scene] Using legacy pipeline
+2025-7-10 10:19:54 - log: [Scene] Forward render pipeline initialized.
+2025-7-10 10:19:54 - log: [Scene] [PHYSICS2D]: switch from box2d-wasm to box2d.
+2025-7-10 10:20:06 - error: msg not exist!Error: msg not exist!
+    at D:\Cocos\editors\Creator\3.8.6\resources\app.asar\extension\cocos-service\service\pages\index.js:1:21575
+    at new Promise (<anonymous>)
+    at Object.pluginMsg (D:\Cocos\editors\Creator\3.8.6\resources\app.asar\extension\cocos-service\service\pages\index.js:1:21460)
+    at D:\Cocos\editors\Creator\3.8.6\resources\app.asar\node_modules\@editor\panel\lib\element.ccc:1:5083
+    at new Promise (<anonymous>)
+    at EventEmitter.<anonymous> (D:\Cocos\editors\Creator\3.8.6\resources\app.asar\node_modules\@editor\panel\lib\element.ccc:1:5044)
+    at EventEmitter.emit (node:events:519:28)
+    at IpcRenderer.<anonymous> (D:\Cocos\editors\Creator\3.8.6\resources\app.asar\node_modules\@base\electron-base-ipc\dist\renderer.ccc:1:3858)
+    at IpcRenderer.emit (node:events:519:28)
+    at Object.onMessage (node:electron/js2c/renderer_init:2:8837)

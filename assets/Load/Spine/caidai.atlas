@@ -1,0 +1,118 @@
+
+caidai.png
+size: 149,46
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+cd_00
+  rotate: true
+  xy: 48, 2
+  size: 17, 19
+  orig: 34, 35
+  offset: 8, 8
+  index: -1
+cd_01
+  rotate: true
+  xy: 90, 2
+  size: 18, 15
+  orig: 34, 35
+  offset: 8, 11
+  index: -1
+cd_02
+  rotate: true
+  xy: 135, 26
+  size: 18, 12
+  orig: 34, 35
+  offset: 8, 10
+  index: -1
+cd_03
+  rotate: false
+  xy: 102, 23
+  size: 14, 21
+  orig: 34, 35
+  offset: 7, 7
+  index: -1
+cd_04
+  rotate: true
+  xy: 129, 4
+  size: 18, 15
+  orig: 34, 35
+  offset: 5, 12
+  index: -1
+cd_05
+  rotate: true
+  xy: 107, 2
+  size: 19, 20
+  orig: 34, 35
+  offset: 6, 10
+  index: -1
+cd_06
+  rotate: false
+  xy: 86, 22
+  size: 14, 22
+  orig: 34, 35
+  offset: 11, 8
+  index: -1
+cd_07
+  rotate: false
+  xy: 118, 24
+  size: 15, 20
+  orig: 34, 35
+  offset: 9, 8
+  index: -1
+cd_08
+  rotate: true
+  xy: 69, 2
+  size: 18, 19
+  orig: 34, 35
+  offset: 7, 8
+  index: -1
+cd_09
+  rotate: false
+  xy: 28, 2
+  size: 18, 16
+  orig: 34, 35
+  offset: 7, 10
+  index: -1
+cd_10
+  rotate: true
+  xy: 30, 20
+  size: 24, 11
+  orig: 34, 35
+  offset: 6, 12
+  index: -1
+cd_11
+  rotate: true
+  xy: 2, 2
+  size: 15, 24
+  orig: 34, 35
+  offset: 12, 8
+  index: -1
+cd_12
+  rotate: false
+  xy: 2, 19
+  size: 10, 25
+  orig: 34, 35
+  offset: 12, 7
+  index: -1
+cd_13
+  rotate: false
+  xy: 14, 20
+  size: 14, 24
+  orig: 34, 35
+  offset: 10, 7
+  index: -1
+cd_14
+  rotate: false
+  xy: 43, 21
+  size: 20, 23
+  orig: 34, 35
+  offset: 6, 7
+  index: -1
+cd_15
+  rotate: false
+  xy: 65, 22
+  size: 19, 22
+  orig: 34, 35
+  offset: 7, 10
+  index: -1

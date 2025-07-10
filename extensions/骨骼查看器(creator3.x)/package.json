@@ -1,0 +1,72 @@
+{
+  "package_version": 2,
+  "version": "1.1.3",
+  "name": "skeleton-viewer",
+  "description": "i18n:tools.description",
+  "main": "./dist/main/index.js",
+  "dependencies": {
+    "fs-extra": "^10.0.0",
+    "vue": "^3.1.4"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^9.0.5",
+    "@types/node": "^16.18.71",
+    "typescript": "^4.3.4"
+  },
+  "panels": {
+    "default": {
+      "title": "骨骼查看器",
+      "type": "dockable",
+      "main": "dist/panels/default",
+      "size": {
+        "min-width": 400,
+        "min-height": 300,
+        "width": 1024,
+        "height": 600
+      }
+    }
+  },
+  "contributions": {
+    "menu": [
+      {
+        "path": "i18n:menu.panel/骨骼查看器",
+        "label": "打开界面",
+        "message": "open-panel"
+      }
+    ],
+    "messages": {
+      "selection:activated": {
+        "methods": [
+          "onSelectionActivated"
+        ]
+      },
+      "ready": {
+        "methods": [
+          "onReadyEvent"
+        ]
+      },
+      "open-panel": {
+        "methods": [
+          "openPanel"
+        ]
+      },
+      "send-to-panel": {
+        "methods": [
+          "default.hello"
+        ]
+      },
+      "update-view": {
+        "methods": [
+          "default.updateView"
+        ]
+      }
+    }
+  },
+  "author": "rabbit",
+  "editor": ">=3.0.0",
+  "scripts": {
+    "build": "tsc -b",
+    "watch": "tsc -w"
+  },
+  "_storeId": "dcb4f4ed9c0b3b1b0bbdfad6630d5bbd"
+}

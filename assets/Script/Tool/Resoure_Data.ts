@@ -1,0 +1,1635 @@
+import { _decorator, Component, Node, Prefab, AudioClip, director, resources, AudioSource, sys, Label, find, CCBoolean, CCInteger, v3, Vec3, debug, PhysicsSystem2D, Sprite, color, LabelOutline, log, SpriteFrame, EPhysics2DDrawFlags, v2, SpriteAtlas, view, game, Game, Vec2, assetManager, Texture2D, isValid, macro, Material, JsonAsset, Font, AnimationClip, AssetManager, Constructor, ImageAsset, Scene, UITransform, SceneAsset, ProgressBar } from 'cc';
+import { Tool_Event } from './Tool_Event';
+import { Tool_Other } from './Tool_Other';
+import { Tool_UI } from './Tool_UI';
+import { PlatformApi } from '../Other/SDK/PlatformApi';
+
+const { ccclass, property } = _decorator;
+
+
+
+/**场景改变类型 */
+export enum Scene_Change_Type {
+    /**自动 */
+    Automatic,
+    /**手动 */
+    Manual,
+    /**结束 */
+    Finish,
+}
+
+
+/**屏幕模式 */
+export enum ScreenMode {
+    /**横屏 */
+    Horizontal,
+    /**竖屏 */
+    Vertical,
+}
+
+export interface Interface {
+    Interface: number,
+}
+
+export type Type = {
+    Type: number;
+}
+
+
+/**游戏数据 */
+export interface Interface_GameData {
+
+    /**账户 */
+    Account: "None" | "Visitors" | (string & {}),
+
+    /**密码 */
+    Password: "666666" | (string & {}),
+
+    /**游戏版本 */
+    Game_Versions: "0.0.1" | (string & {});
+
+    /**游戏模式 */
+    Game_Mode: "Default" | "Easy" | "Normal" | "Hard" | (string & {});
+
+    /**是否首次启动 */
+    Is_FirstStartUp: boolean;
+    /**是否新的一天 */
+    Is_NewDay: boolean;
+
+    /**登录时间 */
+    Login_Time: number;
+    /**登录天数 */
+    Login_Days: number;
+    /**连续登录天数 */
+    Login_ConsecutiveDays: number;
+
+    /**总共游戏时长 */
+    GameTime_Total: number;
+    /**今日游戏时长 */
+    GameTime_Today: number;
+
+    /**存档槽 */
+    Save_Slot: number;
+    /**存档时间 */
+    Save_Time: number;
+    /**存档数据 */
+    Save_Data:
+    {
+        关卡进度: number;
+        关卡分数: number[];
+        关卡时间: number[];
+        关卡星级: number[];
+    }[];
+
+}
+
+
+@ccclass('Resoure_Data')
+export class Resoure_Data extends Component {
+
+    public static readonly instance = new Resoure_Data();
+
+    //--------------------------------------------------------------------------------------------
+
+    /**缓存 Bundles */
+    private Bundles: AssetManager.Bundle = null;
+    /**缓存 Scene */
+    private _Cache_Scene: Object = {};
+    /**缓存 Prefab */
+    private _Cache_Prefab: Object = {};
+    /**缓存 SpriteFrame */
+    private _Cache_SpriteFrame: Object = {};
+    /**缓存 Texture2D */
+    private _Cache_Texture2D: Object = {};
+    /**缓存 AudioClip */
+    private _Cache_AudioClip: Object = {};
+    /**缓存 Material */
+    private _Cache_Material: Object = {};
+    /**缓存 Json */
+    private _Cache_Json: Object = {};
+    /**缓存 AnimationClip */
+    private _Cache_AnimationClip: Object = {};
+    /**缓存 Font */
+    private _Cache_Font: Object = {};
+
+    //--------------------------------------------------------------------------------------------
+
+    Url: string = "https://6808403a942707d722ddad99.mockapi.io/Data";
+
+    private Game_Data: Interface_GameData = {
+
+        Account: "None",
+        Password: "666666",
+
+        /**游戏版本 */
+        Game_Versions: "0.0.1",
+        Game_Mode: "Default",
+
+        /**是否首次启动 */
+        Is_FirstStartUp: true,
+        /**是否新的一天 */
+        Is_NewDay: true,
+
+        /**登录时间 */
+        Login_Time: 0,
+        /**登录天数 */
+        Login_Days: 0,
+        /**连续登录天数 */
+        Login_ConsecutiveDays: 0,
+
+        /**总共游戏时长 */
+        GameTime_Total: 0,
+        /**今日游戏时长 */
+        GameTime_Today: 0,
+
+        /**存档槽 */
+        Save_Slot: 0,
+        /**存档时间 */
+        Save_Time: 0,
+        /**存档数据 */
+        Save_Data: [
+            {
+                关卡进度: 0,
+                关卡分数: [],
+                关卡时间: [],
+                关卡星级: [],
+            }
+        ],
+    }
+
+    //--------------------------------------------------------------------------------------------
+
+    /**震动开关 */
+    private Vibration_Switch: boolean = true;
+
+    /**声音开关 */
+    private Sound_Switch: boolean = true;
+    /**声音音量 */
+    private Sound_Volume: number = 1;
+    /**声音音频组件 */
+    private Sound_AudioSource: AudioSource = null;
+
+    /**音乐开关 */
+    private Music_Switch: boolean = true;
+    /**音乐音量 */
+    private Music_Volume: number = 1;
+    /**音乐音频组件 */
+    private Music_AudioSource: AudioSource = null;
+
+    /**长音效音频组件(可以手动停止的音效) */
+    private Sound_Long_AudioSource: AudioSource[] = [];
+
+    //--------------------------------------------------------------------------------------------
+
+    /**场景名字_当前 */
+    @property({ tooltip: "场景名字_当前" })
+    public Scene_Name_Current: string = "";
+
+    /**场景名字_下个 */
+    @property({ tooltip: "场景名字_下个" })
+    public Scene_Name_Next: string = "";
+
+
+
+    //--------------------------------------------------------------------------------------------
+
+    private FrameRate: number = 0;
+    private LastTime: number = 0;
+    private FrameRate_Schedule: Function = null;
+
+    constructor() {
+        super();
+        this.FrameRate_Schedule = () => {
+            const Time_Current = performance.now();
+            const Time_Elapsed = (Time_Current - this.LastTime) / 1000;
+            const FrameRate = this.FrameRate / Time_Elapsed;
+            console.debug(`帧率: ${FrameRate.toFixed(0)}`);
+            this.FrameRate = 0;
+            this.LastTime = Time_Current;
+        };
+    }
+
+
+    /**查看帧率 */
+    Check_FrameRate() {
+        this.unschedule(this.FrameRate_Schedule);
+        this.FrameRate = 0;
+        this.LastTime = performance.now();
+        this.schedule(this.FrameRate_Schedule, 1);
+    }
+    update(Dt: number): void {
+        this.FrameRate++;
+    }
+    onEnable() {
+        console.debug("组件被启用");
+    }
+    onDisable() {
+        console.debug("组件被禁用或节点变为无效");
+    }
+    onDestroy() {
+        console.debug("组件被销毁");
+    }
+
+    onLoad() {
+        console.log("onLoad");
+
+        this.Director_AddPersistRootNode(this.node);
+        this.Game_FrameRate_Set(120);
+        this.Director_Scheduler_TimeScale_Set(1);
+        // this.Check_FrameRate();
+
+
+        // 启用物理系统
+        // PhysicsSystem2D.instance.enable = true;
+
+        // PhysicsSystem2D.instance.debugDrawFlags =
+        //   EPhysics2DDrawFlags.Shape
+        // | EPhysics2DDrawFlags.Joint
+        // | EPhysics2DDrawFlags.Aabb
+        // | EPhysics2DDrawFlags.Pair
+        // | EPhysics2DDrawFlags.CenterOfMass
+
+
+
+        // 监听浏览器窗口大小变化事件
+        window.addEventListener('resize', (Event) => {
+            Screen_Update();
+        });
+        // 监听浏览器横屏竖屏变化事件
+        window.addEventListener("orientationchange", (Event) => {
+            console.debug(Event);
+            Screen_Update();
+        });
+
+        // 更新屏幕尺寸
+        function Screen_Update() {
+
+            // 浏览器窗口可见区域尺寸
+            let Screen_Width = window.innerWidth;
+            let Screen_Height = window.innerHeight;
+            console.debug(`当前可见区域尺寸: ${Screen_Width} x ${Screen_Height}`);
+
+            // 浏览器窗口设计分辨率尺寸
+            // let Width_Design = view.getDesignResolutionSize().width;
+            // let Height_Design = view.getDesignResolutionSize().height;
+            // console.debug(`当前设计分辨率: ${Width_Design} x ${Height_Design}`);
+
+            // 可见区域尺寸
+            let Visible_Size = view.getVisibleSize();
+            let Visible_Width = Visible_Size.width;
+            let Visible_Height = Visible_Size.height;
+            console.debug(`当前可见分辨率: ${Visible_Width} x ${Visible_Height}`);
+
+            if (Visible_Width >= Visible_Height) {
+                console.error('当前为横屏');
+                Tool_Event.instance.Event_Dispatch("Screen_Update", "Horizontal");
+            } else {
+                console.error('当前为竖屏');
+                Tool_Event.instance.Event_Dispatch("Screen_Update", "Vertical");
+            }
+
+        }
+
+
+        game.on(Game.EVENT_HIDE, () => {
+            // 游戏窗口被隐藏时的处理逻辑
+            console.debug('Game window is hidden', "游戏窗口被隐藏时的处理逻辑",);
+        });
+        game.on(Game.EVENT_SHOW, () => {
+            // 游戏窗口被显示时的处理逻辑
+            console.debug('Game window is shown', "游戏窗口被显示时的处理逻辑");
+        });
+        document.addEventListener('visibilitychange', () => {
+            if (document.visibilityState === 'visible') {
+                // 屏幕解锁时的处理逻辑
+                console.debug('Screen is unlocked', "屏幕解锁时的处理逻辑");
+            } else {
+                // 屏幕锁定时的处理逻辑
+                console.debug('Screen is locked', "屏幕锁定时的处理逻辑");
+            }
+        });
+
+
+
+
+        this.Music_AudioSource = new Node("Music").addComponent(AudioSource);
+        this.Sound_AudioSource = new Node("Sound").addComponent(AudioSource);
+        this.Music_AudioSource.node.parent = this.node;
+        this.Sound_AudioSource.node.parent = this.node;
+
+    }
+
+    async start() {
+
+        PlatformApi.instance.onLoad();
+
+
+        this.Save_Get()
+
+        this.Is_First_StartUp();
+        this.Information_Printing();
+        this.Bundles = await this.Load_Bundle("Load");
+
+        // this.Music_Play("Audio/BGM1");
+
+        //加载资源
+
+        // await this.Load_SpriteFrame("SpriteFrame/Panel/PanelMathMatch/BoxC")
+        // await this.Load_SpriteFrame("SpriteFrame/Panel/PanelMathMatch/BoxN")
+        // await this.Load_SpriteFrame("SpriteFrame/Panel/PanelMathMatch/BoxE")
+        // await this.Load_SpriteFrame("SpriteFrame/Panel/PanelMathMatch/BoxU")
+        // await this.Load_Json("Json/mathmatch");
+        // await this.Load_Prefab("Prefab/PanelMathMatch/Icon");
+
+    }
+
+
+
+
+
+    /**是否首次启动 */
+    Is_First_StartUp() {
+        let First_Start = this.Data_Get("First_Start");
+        console.debug(First_Start);
+        if (!Tool_Other.instance.Get_Type_Is_Abnormal(First_Start)) {
+            this.Game_Data.Is_FirstStartUp = true;
+            First_Start = this.Game_Data.Is_FirstStartUp;
+            this.Data_Set("First_Start", First_Start);
+        }
+        if (First_Start) {
+            console.debug("第一次开始");
+            // First_Start = false;
+            // this.Data_Set("First_Start", First_Start);
+        } else {
+            console.debug("不是第一次开始");
+        }
+    }
+
+
+
+    /**请求数据 */
+    async Fetch_Data(Url: string) {
+        try {
+            const Response = await fetch(Url, {
+                cache: 'no-cache', // 或 'reload'
+                method: 'GET',
+                headers: {
+                    'Cache-Control': 'no-cache'
+                }
+            });
+            let Status = Response.status;
+            console.log("请求回复:", Status, Response);
+            switch (Status) {
+                case 200:
+                    const Data = await Response.json();
+                    console.debug("200 OK	请求成功 GET/PUT 请求成功");
+                    return Data;
+                case 400:
+                    console.debug("400 Bad Request  请求错误");
+                    return null;
+                case 403:
+                    console.debug("403 Forbidden    无权限");
+                    return null;
+                case 404:
+                    console.debug("404 Not Found    资源不存在");
+                    return null;
+                default:
+                    break;
+            }
+        } catch (error) {
+            console.error("获取数据失败:", error);
+        }
+    }
+
+    /**
+     * 向 MockAPI 提交数据（POST 请求）
+     * @param Url API 地址
+     * @param Data 要提交的数据
+     */
+    async Post_Data(Url: string, Data: any) {
+        try {
+            const Response = await fetch(Url, {
+                method: 'POST', // 指定为 POST 请求
+                headers: {
+                    'Content-Type': 'application/json', // 声明 JSON 格式
+                },
+                body: JSON.stringify(Data), // 将对象转为 JSON 字符串
+            });
+            let Status = Response.status;
+            console.log("请求回复:", Status, Response);
+            switch (Status) {
+                case 201:
+                    const Data = await Response.json();
+                    console.debug("201 Created	资源创建成功 POST 请求成功(新增数据)");
+                    return Data;
+                case 400:
+                    console.debug("400 Bad Request  请求错误");
+                    return null;
+                case 403:
+                    console.debug("403 Forbidden    无权限");
+                    return null;
+                case 404:
+                    console.debug("404 Not Found    资源不存在");
+                    return null;
+                default:
+                    break;
+            }
+        } catch (error) {
+            console.error("提交数据失败:", error);
+            throw error; // 抛出错误以便外部捕获
+        }
+    }
+
+    /**
+     * 更新数据（PUT请求）
+     * @param Url - 要更新的资源API地址
+     * @param Data - 要更新的数据对象
+     * @returns 更新后的数据 或 null (如果失败)
+     */
+    async Update_Data(Url: string, Data: any) {
+        try {
+            const Response = await fetch(Url, {
+                method: 'PUT', // 或 'PATCH' 如果API支持部分更新
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(Data)
+            });
+            let Status = Response.status;
+            console.log("请求回复:", Status, Response);
+            switch (Status) {
+                case 200:
+                    const Data = await Response.json();
+                    console.debug("200 OK	请求成功 GET/PUT 请求成功");
+                    return Data;
+                case 400:
+                    console.debug("400 Bad Request  请求错误");
+                    return null;
+                case 403:
+                    console.debug("403 Forbidden    无权限");
+                    return null;
+                case 404:
+                    console.debug("404 Not Found    资源不存在");
+                    return null;
+                default:
+                    break;
+            }
+        } catch (error) {
+            console.error("更新请求失败:", error);
+            throw error;
+        }
+    }
+
+    /**
+     * 批量更新符合条件的数据
+     * @param Url - 资源基础地址
+     * @param Params - 查询条件对象
+     * @param UpdateData - 要更新的数据内容
+     * @returns 返回每个更新操作的结果数组
+     * @throws 当查询或更新过程中出现错误时抛出
+     * @example
+     * await this.Resoure_Data.Update_Data_All(this.Resoure_Data.Url , {Key:"Value"},Data);
+     */
+    async Update_Data_All(Url: string, Params: Record<string, string>, UpdateData: any) {
+        try {
+            // 1. 构建查询字符串并获取待更新数据
+            const QueryString = new URLSearchParams(Params).toString();
+            const Response = await fetch(`${Url}?${QueryString}`, {
+                method: 'GET',
+                headers: {
+                    'Cache-Control': 'no-cache',
+                    'Content-Type': 'application/json'
+                }
+            });
+            const Status = Response.status;
+            console.log("查询请求响应:", Status, Response);
+            switch (Status) {
+                case 200:
+                    const ItemsToUpdate = await Response.json();
+                    if (!Array.isArray(ItemsToUpdate)) {
+                        throw new Error("API返回数据格式错误：期望数组");
+                    }
+                    // 2. 并行执行批量更新
+                    const UpdateResults = await Promise.all(
+                        ItemsToUpdate.map(item => this.Update_Data(`${Url}/${item.id}`, UpdateData)));
+                    console.debug("批量更新完成，结果:", UpdateResults);
+                    return UpdateResults;
+                case 400:
+                    console.debug("400 Bad Request - 查询参数错误");
+                    return null;
+                case 403:
+                    console.debug("403 Forbidden - 无查询权限");
+                    return null;
+                case 404:
+                    console.debug("404 Not Found - 查询资源不存在");
+                    return null;
+                default:
+                    console.debug(`未处理的查询状态码: ${Status}`);
+                    return null;
+            }
+        } catch (error) {
+            console.error("批量更新流程失败:", error);
+            throw error;
+        }
+    }
+
+    /**
+     * 删除数据 (DELETE 请求)
+     * @param Url 要删除的资源API地址
+     */
+    async Delete_Data(Url: string) {
+        try {
+            const Response = await fetch(Url, {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            });
+
+            let Status = Response.status;
+            console.log("请求回复:", Status, Response);
+            switch (Status) {
+                case 204:
+                    const Data = await Response.json();
+                    console.debug("204 No Content	成功但无返回内容	DELETE 请求成功");
+                    return Data;
+                case 400:
+                    console.debug("400 Bad Request  请求错误");
+                    return null;
+                case 403:
+                    console.debug("403 Forbidden    无权限");
+                    return null;
+                case 404:
+                    console.debug("404 Not Found    资源不存在");
+                    return null;
+                default:
+                    break;
+            }
+        } catch (error) {
+            console.error("删除请求失败:", error);
+            throw error; // 抛出错误以便外部处理
+        }
+    }
+
+    /**
+     * 删除符合条件的数据
+     * @param Url 请求地址
+     * @param Params 查询条件
+     * @example
+     * await this.Resoure_Data.Delete_Data_All(this.Resoure_Data.Url , {Key:"Value"});
+     */
+    async Delete_Data_All(Url: string, Params: Record<string, string>) {
+        try {
+            // 查询符合条件的数据
+            const QueryString = new URLSearchParams(Params).toString();
+            const Response = await fetch(`${Url}?${QueryString}`, {
+                cache: 'no-cache',
+                method: 'GET',
+                headers: {
+                    'Cache-Control': 'no-cache'
+                }
+            });
+            const Status = Response.status;
+            console.log("查询请求回复:", Status, Response);
+            switch (Status) {
+                case 200:
+                    const ItemsToDelete = await Response.json();
+                    if (!Array.isArray(ItemsToDelete)) {
+                        throw new Error("查询结果不是数组");
+                    }
+                    // 批量删除
+                    const DeleteResults = await Promise.all(
+                        ItemsToDelete.map(item =>
+                            this.Delete_Data(`${Url}/${item.id}`)
+                                .then(() => ({ id: item.id, success: true }))
+                                .catch(error => {
+                                    console.error(`删除 ${item.id} 时出错:`, error);
+                                    return { id: item.id, success: false, error };
+                                })));
+                    console.debug("批量删除结果:", DeleteResults);
+                    return DeleteResults;
+                case 400:
+                    console.debug("400 Bad Request  查询请求错误");
+                    return null;
+                case 403:
+                    console.debug("403 Forbidden    无查询权限");
+                    return null;
+                case 404:
+                    console.debug("404 Not Found    查询资源不存在");
+                    return null;
+                default:
+                    console.debug(`未处理的状态码: ${Status}`);
+                    return null;
+            }
+        } catch (error) {
+            console.error("批量删除失败:", error);
+            throw error;
+        }
+    }
+
+
+    /**存档设置 */
+    Save_Set() {
+        this.Data_Set("Game_Data", this.Game_Data);
+    }
+    /**存档获取 */
+    Save_Get() {
+        let Game_Data = this.Data_Get("Game_Data");
+        if (Game_Data == null || Game_Data == undefined) {
+            this.Save_Set();
+            Game_Data = this.Data_Get("Game_Data");
+        }
+        this.Game_Data = Game_Data;
+        return this.Game_Data;
+    }
+
+    /**
+    *数据保存本地
+    *@Data_Name 待保存数据的名字
+    *@Data_Name 待保存的数据
+    */
+    // Data_Set(Data_Name: string, Data: any) {
+    //     sys.localStorage.setItem(Data_Name, JSON.stringify(Data));
+    // }
+    /**
+     *读取本地数据
+     *@Data_Name 待读取数据的名字
+     */
+    // Data_Get(Data_Name: string) {
+    //     let Data = sys.localStorage.getItem(Data_Name);
+    //     return JSON.parse(Data);
+    // }
+
+    /**
+     * 安全保存数据到本地
+     * @param Data_Name 数据键名
+     * @param Data 要保存的数据（会自动JSON序列化）
+     */
+    Data_Set(Data_Name: string, Data: any): void {
+        try {
+            sys.localStorage.setItem(Data_Name, JSON.stringify(Data));
+        } catch (e) {
+            console.error(`[Storage] 保存 ${Data_Name} 失败:`, e);
+        }
+    }
+
+    /**
+     * 安全读取本地数据
+     * @param Data_Name 数据键名
+     * @param Default_Value 当数据不存在时的默认值
+     */
+    Data_Get(Data_Name: string, Default_Value: any = null): any {
+        try {
+            let Data_Value;
+            const Data_Raw = sys.localStorage.getItem(Data_Name);
+            Data_Value = Data_Raw ? JSON.parse(Data_Raw) : null;
+            // 返回数据或默认值
+            return Data_Value !== undefined ? Data_Value : Default_Value;
+        } catch (e) {
+            console.error(`[Storage] 读取 ${Data_Name} 失败:`, e);
+            return Default_Value;
+        }
+    }
+
+    /**
+     * @param Data_Name 待删除数据的名字
+     */
+    Data_Delete(Data_Name: string) {
+        sys.localStorage.removeItem(Data_Name);
+    }
+    /**
+     * @param Data_Name 待检查数据的名字
+     * @returns 是否存在该数据
+     */
+    Data_Is_Exist(Data_Name: string): boolean {
+        return sys.localStorage.getItem(Data_Name) !== null;
+    }
+    /**
+     * @param Data_Name 待更新数据的名字
+     * @param New_Data 新的数据
+     */
+    Data_Update(Data_Name: string, New_Data: any) {
+        if (this.Data_Is_Exist(Data_Name)) {
+            let Existing_Data = this.Data_Get(Data_Name);
+            // 根据需要合并或更新数据
+            let Updated_Data = { ...Existing_Data, ...New_Data };
+            this.Data_Set(Data_Name, Updated_Data);
+        } else {
+            console.error(`Data with name ${Data_Name} does not exist.`);
+        }
+    }
+    /**
+     * 获取所有本地存储数据的键
+     * @returns 所有键的数组
+     */
+    Data_Get_All_Keys(): string[] {
+        return Object.keys(sys.localStorage);
+    }
+    /**
+     * 获取所有本地存储的数据
+     * @returns 所有数据的对象
+     */
+    Data_Get_All(): object {
+        const Keys = this.Data_Get_All_Keys();
+        let All_Data = {};
+        Keys.forEach(Key => {
+            All_Data[Key] = this.Data_Get(Key);
+        });
+        return All_Data;
+    }
+    /**
+     * 清空所有本地存储数据
+     */
+    Clear_All_Data() {
+        sys.localStorage.clear();
+    }
+
+    /**
+     * 深拷贝
+     * @param Obj 需要拷贝的对象
+     * @param Cache 缓存已拷贝的对象（用于处理循环引用）
+     * @returns 拷贝后的对象
+     */
+    Copy_Deep<T>(Obj: T, Cache = new WeakMap()): T {
+        if (typeof Obj !== 'object' || Obj === null) {
+            return Obj;
+        }
+        if (Cache.has(Obj)) {
+            return Cache.get(Obj);
+        }
+        if (Obj instanceof Date) {
+            return new Date(Obj) as T;
+        }
+        if (Obj instanceof RegExp) {
+            return new RegExp(Obj) as T;
+        }
+        if (Obj instanceof Map) {
+            const Copied_Map = new Map();
+            Cache.set(Obj, Copied_Map);
+            Obj.forEach((Value, Key) => {
+                Copied_Map.set(Key, this.Copy_Deep(Value, Cache));
+            });
+            return Copied_Map as T;
+        }
+        if (Obj instanceof Set) {
+            const Copied_Set = new Set();
+            Cache.set(Obj, Copied_Set);
+            Obj.forEach((Value) => {
+                Copied_Set.add(this.Copy_Deep(Value, Cache));
+            });
+            return Copied_Set as T;
+        }
+        if (Array.isArray(Obj)) {
+            const Copied_Array = Obj.map((Item) => this.Copy_Deep(Item, Cache));
+            Cache.set(Obj, Copied_Array);
+            return Copied_Array as T;
+        }
+        const Copied_Obj: Partial<T> = {};
+        Cache.set(Obj, Copied_Obj);
+        for (const Key in Obj) {
+            if (Object.prototype.hasOwnProperty.call(Obj, Key)) {
+                Copied_Obj[Key] = this.Copy_Deep(Obj[Key], Cache);
+            }
+        }
+        return Copied_Obj as T;
+    }
+    /**
+     * 浅拷贝
+     * @param Obj 需要拷贝的对象
+     * @returns 拷贝后的对象
+     */
+    Copy_Shallow<T>(Obj: T): T {
+        if (typeof Obj !== 'object' || Obj === null) {
+            return Obj;
+        }
+        if (Array.isArray(Obj)) {
+            return Obj.slice() as T;
+        }
+        return { ...Obj };
+    }
+    /**震动开关设置 */
+    Vibration_Switch_Set(Switch: boolean = false) {
+        this.Vibration_Switch = Switch;
+        this.Data_Set("Vibration_Switch", this.Vibration_Switch);
+    }
+    /**震动开关获取 */
+    Vibration_Switch_Get() {
+        this.Vibration_Switch = this.Data_Get("Vibration_Switch");
+        if (this.Vibration_Switch === null || this.Vibration_Switch === undefined) {
+            this.Vibration_Switch = true;
+        }
+        return this.Vibration_Switch;
+    }
+    /**声音开关设置 */
+    Sound_Switch_Set(Switch: boolean = false) {
+        this.Sound_Switch = Switch;
+        if (this.Sound_Switch) {
+            this.Sound_Long_AudioSource.forEach(element => {
+                element.volume = this.Sound_Volume;
+            });
+        } else {
+            this.Sound_Long_AudioSource.forEach(element => {
+                element.volume = 0;
+            });
+        }
+        this.Data_Set("Sound_Switch", this.Sound_Switch);
+    }
+    /**声音开关获取 */
+    Sound_Switch_Get() {
+        this.Sound_Switch = this.Data_Get("Sound_Switch");
+        if (this.Sound_Switch === null || this.Sound_Switch === undefined) {
+            this.Sound_Switch = true;
+        }
+        return this.Sound_Switch;
+    }
+    /**声音音量设置 */
+    Sound_Volume_Set(Volume: number = 0) {
+        this.Sound_Volume = Volume;
+        this.Sound_Long_AudioSource.forEach(element => {
+            element.volume = this.Sound_Volume;
+        });
+    }
+    /**音乐开关设置 */
+    Music_Switch_Set(Switch: boolean = false) {
+        this.Music_Switch = Switch;
+        if (this.Music_Switch) {
+            this.Music_AudioSource.volume = this.Music_Volume;
+        } else {
+            this.Music_AudioSource.volume = 0;
+        }
+        this.Data_Set("Music_Switch", this.Music_Switch);
+    }
+    /**音乐开关获取 */
+    Music_Switch_Get() {
+        this.Music_Switch = this.Data_Get("Music_Switch");
+        if (this.Music_Switch === null || this.Music_Switch === undefined) {
+            this.Music_Switch = true;
+        }
+        return this.Music_Switch;
+    }
+    /**音乐音量设置 */
+    Music_Volume_Set(Volume: number = 0) {
+        this.Music_Volume = Volume;
+        this.Music_AudioSource.volume = this.Music_Volume;
+    }
+    /**音频开关设置 */
+    Audio_Switch_Set(Switch: boolean = false) {
+        this.Sound_Switch_Set(Switch);
+        this.Music_Switch_Set(Switch);
+    }
+    /**音频声音设置 */
+    Audio_Volume_Set(Volume: number = 0) {
+        this.Sound_Volume_Set(Volume);
+        this.Music_Volume_Set(Volume);
+    }
+    /**音效播放 */
+    async Sound_Play(Path: string) {
+        let Res = await this.Load_AudioClip(Path);
+        if (!isValid(this.node)) return;
+        if (this.Sound_Switch) {
+            this.Sound_AudioSource.volume = this.Sound_Volume;
+        } else {
+            this.Sound_AudioSource.volume = 0;
+        }
+        this.Sound_AudioSource.loop = false;
+        this.Sound_AudioSource.playOneShot(Res, this.Sound_Volume);
+    }
+    /**音乐播放 */
+    async Music_Play(Path: string, Call = () => { }) {
+        console.warn(Path);
+        let Res = await this.Load_AudioClip(Path);
+        if (!isValid(this.node)) return;
+        Call && Call()
+        this.Music_AudioSource.enabled = true;
+        this.Music_AudioSource.stop();
+        this.Music_AudioSource.clip = Res;
+        if (this.Music_Switch) {
+            this.Music_AudioSource.volume = this.Music_Volume;
+        } else {
+            this.Music_AudioSource.volume = 0;
+        }
+        this.Music_AudioSource.loop = true;
+        this.Music_AudioSource.play();
+    }
+    /**长音效播放 */
+    async Sound_Long_play(Path: string) {
+        if (this.Sound_Long_AudioSource[Path]) {
+            this.Sound_Long_AudioSource[Path].enabled = true;
+            this.Sound_Long_AudioSource[Path].stop();
+            if (this.Sound_Switch) {
+                this.Sound_Long_AudioSource[Path].volume = this.Sound_Volume;
+            } else {
+                this.Sound_Long_AudioSource[Path].volume = 0;
+            }
+            this.Sound_Long_AudioSource[Path].loop = true;
+            this.Sound_Long_AudioSource[Path].play();
+            return
+        }
+        let Res = await this.Load_AudioClip(Path);
+        if (!isValid(this.node)) return//防止音乐还没加载完 场景就被销毁了
+        this.Sound_Long_AudioSource[Path] = new Node(Path).addComponent(AudioSource);
+        this.Sound_Long_AudioSource[Path].node.parent = this.node;
+        this.Sound_Long_AudioSource[Path].clip = Res;
+        this.Sound_Long_AudioSource[Path].enabled = true;
+        this.Sound_Long_AudioSource[Path].stop();
+        if (this.Sound_Switch) {
+            this.Sound_Long_AudioSource[Path].volume = this.Sound_Volume;
+        } else {
+            this.Sound_Long_AudioSource[Path].volume = 0;
+        }
+        this.Sound_Long_AudioSource[Path].loop = true;
+        this.Sound_Long_AudioSource[Path].play();
+    }
+    /**音乐暂停 */
+    Music_Pause() {
+        this.Music_AudioSource.pause();
+    }
+    /**音乐恢复 */
+    Music_Resume() {
+        this.Music_AudioSource.play();
+    }
+    /**音乐停止 */
+    Music_Stop() {
+        this.Music_AudioSource.stop();
+    }
+    /**长音效暂停 */
+    Sound_Long_Pause(Path: string) {
+        if (this.Sound_Long_AudioSource[Path]) this.Sound_Long_AudioSource[Path].pause();
+    }
+    /**长音效恢复 */
+    Sound_Long_Resume(Path: string) {
+        if (this.Sound_Long_AudioSource[Path]) this.Sound_Long_AudioSource[Path].play();
+    }
+    /**长音效停止 */
+    Sound_Long_Stop(Path: string) {
+        if (this.Sound_Long_AudioSource[Path]) this.Sound_Long_AudioSource[Path].stop();
+    }
+    /**长音效停止所有 */
+    Sound_Long_Stop_All() {
+        if (this.Sound_AudioSource) this.Sound_AudioSource.stop();
+        for (let i = 0; i < this.Sound_Long_AudioSource.length; i++) {
+            this.Sound_Long_AudioSource[i].stop();
+        }
+    }
+
+    /**加载远程图片资源无后缀名
+     * @Path 远程路径
+     */
+    async Load_Remote_ImageAsset(Path: string): Promise<SpriteFrame> {
+        const Time_Start = Date.now();
+        try {
+            return new Promise((resolve, reject) => {
+                assetManager.loadRemote<ImageAsset>(Path, { ext: '.png' }, (Err, Res: ImageAsset) => {
+                    if (Err) {
+                        console.error("加载 ImageAsset 失败:", Err);
+                        reject(Err);
+                        return;
+                    }
+                    const Time_Finish = Date.now();
+                    const Time_Total = Time_Finish - Time_Start;
+                    console.debug(`加载 ImageAsset ${Path} 成功: 总用时长: ${Time_Total} ms`);
+                    const Texture = new Texture2D();
+                    Texture.image = Res;
+                    const Sprite_Frame = new SpriteFrame();
+                    Sprite_Frame.texture = Texture;
+                    resolve(Sprite_Frame);
+                    return;
+                });
+            });
+        } catch (Error) {
+            console.error(`加载 ImageAsset ${Path} 错误: ${Error}`);
+            throw Error;
+        }
+    }
+    /**加载远程图片资源有后缀名
+    * @Path 远程/本地路径
+    */
+    async Load_Remote_ImageAsset_(Path: string): Promise<SpriteFrame> {
+
+        // try {
+        //     return new Promise((resolve, reject) => {
+        //         assetManager.loadRemote<ImageAsset>(Path, (err, imageAsset) => {
+        //             if (err) {
+        //                 console.error('加载远程图片失败:', err);
+        //                 return;
+        //             }
+        //             // 创建纹理
+        //             const texture = new Texture2D();
+        //             texture.image = imageAsset;
+        //             // 创建精灵帧
+        //             const spriteFrame = new SpriteFrame();
+        //             spriteFrame.texture = texture;
+        //             resolve(spriteFrame);
+        //         });
+        //     });
+        // } catch (Error) {
+        //     console.error(`加载 ImageAsset ${Path} 错误: ${Error}`);
+        //     throw Error;
+        // }
+
+        // return
+
+        const Time_Start = Date.now();
+        try {
+            return new Promise((resolve, reject) => {
+                assetManager.loadRemote<ImageAsset>(Path, (Err, Res: ImageAsset) => {
+                    if (Err) {
+                        console.error("加载 ImageAsset 失败:", Err);
+                        reject(Err);
+                        return;
+                    }
+                    const Time_Finish = Date.now();
+                    const Time_Total = Time_Finish - Time_Start;
+                    console.debug(`加载 ImageAsset ${Path} 成功: 总用时长: ${Time_Total} ms`);
+                    const Texture = new Texture2D();
+                    Texture.image = Res;
+                    const Sprite_Frame = new SpriteFrame();
+                    Sprite_Frame.texture = Texture;
+                    resolve(Sprite_Frame);
+                    return;
+                });
+            });
+        } catch (Error) {
+            console.error(`加载 ImageAsset ${Path} 错误: ${Error}`);
+            throw Error;
+        }
+    }
+    /**加载远程音频资源
+     * @Path 远程路径
+     */
+    async Load_Remote_audio(Path: string): Promise<AudioClip> {
+        const Time_Start = Date.now();
+        try {
+            return new Promise((resolve, reject) => {
+                assetManager.loadRemote(Path, (Err, Res: AudioClip) => {
+                    if (Err) {
+                        console.error("加载 AudioClip 失败:", Err);
+                        reject(Err);
+                        return;
+                    }
+                    const Time_Finish = Date.now();
+                    const Time_Total = Time_Finish - Time_Start;
+                    console.debug(`加载 AudioClip ${Path} 成功: 总用时长: ${Time_Total} ms`);
+                    resolve(Res);
+                    return;
+                });
+            });
+        } catch (Error) {
+            console.error(`加载 AudioClip ${Path} 错误: ${Error}`);
+            throw Error;
+        }
+    }
+
+    async Load_Bundle(Bundle_Name: string): Promise<any> {
+        const Time_Start = Date.now();
+        try {
+            return new Promise((resolve, reject) => {
+                assetManager.loadBundle(Bundle_Name, (Err, Res) => {
+                    if (Err) {
+                        console.error(`加载 Bundle ${Bundle_Name} 失败: ${Err}`);
+                        reject(Err);
+                        return;
+                    }
+                    const Time_Finish = Date.now();
+                    const Time_Total = Time_Finish - Time_Start;
+                    console.debug(`加载 Bundle ${Bundle_Name} 成功: 总用时长: ${Time_Total} ms`);
+                    resolve(Res);
+                    return;
+                });
+            });
+        } catch (Error) {
+            console.error(`加载 Bundle ${Bundle_Name} 错误: ${Error}`);
+            throw Error;
+        }
+    }
+    /**加载文件夹 */
+    async Load_Dir(Path: string, Type: any): Promise<any> {
+        const Time_Start = Date.now();
+        try {
+            return new Promise((resolve, reject) => {
+                this.Bundles.loadDir(Path, Type, (finished, total, item) => {
+                    const onProgress: string = (finished / total).toFixed(2);
+                    console.debug(onProgress);
+                }, (Err, Res: any) => {
+                    if (Err) {
+                        console.error("加载 Dir 失败:", Err);
+                        reject(Err);
+                        return;
+                    }
+                    const Time_Finish = Date.now();
+                    const Time_Total = Time_Finish - Time_Start;
+                    console.debug(`加载 Dir ${Path} 成功: 总用时长: ${Time_Total} ms`);
+                    resolve(Res);
+                    return;
+                });
+            });
+        } catch (Error) {
+            console.error(`加载 Dir ${Path} 错误: ${Error}`);
+            throw Error;
+        }
+    }
+
+    async Load_Scene(Path: string, Progress_Mask?: Node, Progress_Bar?: Node, Value_Label?: Label, Mode: ScreenMode = ScreenMode.Horizontal): Promise<Scene> {
+        if (this.Bundles == null) {
+            this.Bundles = await this.Load_Bundle("Load");
+        }
+        if (this._Cache_Scene[Path]) {
+            console.debug(`Scene ${Path} 资源存在`);
+            return this._Cache_Scene[Path];
+        }
+        const Time_Start = Date.now();
+        try {
+            if (Progress_Mask && Progress_Bar) {
+                let W_PM = Progress_Mask.getComponent(UITransform).width;
+                let H_PM = Progress_Mask.getComponent(UITransform).height;
+                let W_PB = Progress_Bar.getComponent(UITransform).width;
+                let H_PB = Progress_Bar.getComponent(UITransform).height;
+                if (Mode == ScreenMode.Horizontal) {
+                    Progress_Mask.position = v3(Math.floor(-W_PM * 1), 0, 0);
+                    Progress_Bar.position = v3(Math.floor(W_PB * 1), 0, 0);
+                } else {
+                    Progress_Mask.position = v3(0, Math.floor(-H_PM * 1), 0);
+                    Progress_Bar.position = v3(0, Math.floor(H_PB * 1), 0);
+                }
+                Progress_Mask.position = v3(Math.floor(-W_PM), Math.floor(-H_PM), 0);
+                Progress_Bar.position = v3(Math.floor(-W_PB), Math.floor(H_PB), 0);
+            }
+
+            return new Promise((resolve, reject) => {
+                this.Bundles.loadScene(Path, null, (Finished, Total, Item) => {
+                    let Schedule: number = Number((Finished / Total).toFixed(2));
+                    if (Progress_Mask && Progress_Bar) {
+                        let W_PM = Progress_Mask.getComponent(UITransform).width;
+                        let H_PM = Progress_Mask.getComponent(UITransform).height;
+                        let W_PB = Progress_Bar.getComponent(UITransform).width;
+                        let H_PB = Progress_Bar.getComponent(UITransform).height;
+                        if (Mode == ScreenMode.Horizontal) {
+                            Progress_Mask.position = v3(Math.floor(-W_PM * (1 - Schedule)), 0, 0);
+                            Progress_Bar.position = v3(Math.floor(W_PB * (1 - Schedule)), 0, 0);
+                        } else {
+                            Progress_Mask.position = v3(0, Math.floor(-H_PM * (1 - Schedule)), 0);
+                            Progress_Bar.position = v3(0, Math.floor(H_PB * (1 - Schedule)), 0);
+                        }
+                        let Value: number = Math.floor(Schedule * 100);
+                        if (Value_Label) {
+                            Value_Label.string = Value + "%"
+                        }
+                    }
+                    // console.debug(`加载 Scene 进度: ${Finished}/${Total} (${Value}%)`);
+                }, (Err, Res: SceneAsset) => {
+                    if (Err) {
+                        console.error("加载 Scene 失败:", Err);
+                        reject(Err);
+                        return;
+                    }
+                    this._Cache_Scene[Path] = Res;
+                    const Time_Finish = Date.now();
+                    const Time_Total = Time_Finish - Time_Start;
+                    console.debug(`加载 Scene ${Path} 成功: 总用时长: ${Time_Total} ms`);
+                    this.Scene_Name_Current = Path;
+                    resolve(this._Cache_Scene[Path]);
+                    return;
+                });
+            });
+        } catch (Error) {
+            console.error(`加载 Scene ${Path} 错误: ${Error}`);
+            throw Error;
+        }
+    }
+
+    async Load_Prefab(Path: string): Promise<Prefab> {
+        if (this.Bundles == null) {
+            this.Bundles = await this.Load_Bundle("Load");
+        }
+        if (this._Cache_Prefab[Path]) {
+            console.debug(`Prefab ${Path} 资源存在`);
+            return this._Cache_Prefab[Path];
+        }
+        const Time_Start = Date.now();
+        try {
+            return new Promise((resolve, reject) => {
+                this.Bundles.load(Path, Prefab, (Err, Res: Prefab) => {
+                    if (Err) {
+                        console.error(`加载 Prefab ${Path} 失败: ${Err}`);
+                        reject(Err);
+                        return;
+                    }
+                    this._Cache_Prefab[Path] = Res;
+                    const Time_Finish = Date.now();
+                    const Time_Total = Time_Finish - Time_Start;
+                    console.debug(`加载 Prefab ${Path} 成功: 总用时长: ${Time_Total} ms`);
+                    resolve(this._Cache_Prefab[Path]);
+                    return;
+                });
+            });
+        } catch (Error) {
+            console.error(`加载 Prefab ${Path} 错误: ${Error}`);
+            throw Error;
+        }
+    }
+    async Load_SpriteFrame(Path: string): Promise<SpriteFrame> {
+        Path = Path + "/spriteFrame";
+        if (this._Cache_SpriteFrame[Path]) {
+            // console.debug(`SpriteFrame ${Path} 资源存在`);
+            return this._Cache_SpriteFrame[Path];
+        }
+        const Time_Start = Date.now();
+        try {
+            return new Promise((resolve, reject) => {
+                this.Bundles.load(Path, SpriteFrame, (Err, Res: SpriteFrame) => {
+                    if (Err) {
+                        console.error(`加载 SpriteFrame ${Path} 失败: ${Err}`);
+                        reject(Err);
+                        return;
+                    }
+                    this._Cache_SpriteFrame[Path] = Res;
+                    const Time_Finish = Date.now();
+                    const Time_Total = Time_Finish - Time_Start;
+                    console.debug(`加载 SpriteFrame ${Path} 成功: 总用时长: ${Time_Total} ms`);
+                    resolve(this._Cache_SpriteFrame[Path]);
+                    return;
+                });
+            });
+        } catch (Error) {
+            console.error(`加载 SpriteFrame ${Path} 错误: ${Error}`);
+            throw Error;
+        }
+    }
+    async Load_Texture(Path: string): Promise<Texture2D> {
+        if (this._Cache_Texture2D[Path]) {
+            console.debug(`Texture ${Path} 资源存在`);
+            return this._Cache_Texture2D[Path];
+        }
+        const Time_Start = Date.now();
+        try {
+            return new Promise((resolve, reject) => {
+                this.Bundles.load(Path, Texture2D, (Err, Res: Texture2D) => {
+                    if (Err) {
+                        console.error(`加载 Texture ${Path} 失败: ${Err}`);
+                        reject(Err);
+                        return;
+                    }
+                    this._Cache_Texture2D[Path] = Res;
+                    const Time_Finish = Date.now();
+                    const Time_Total = Time_Finish - Time_Start;
+                    console.debug(`加载 Texture ${Path} 成功: 总用时长: ${Time_Total} ms`);
+                    resolve(this._Cache_Texture2D[Path]);
+                    return;
+                });
+            });
+        } catch (Error) {
+            console.error(`加载 Texture ${Path} 错误: ${Error}`);
+            throw Error;
+        }
+    }
+    async Load_AudioClip(Path: string): Promise<AudioClip> {
+        if (this._Cache_AudioClip[Path]) {
+            console.debug(`Audio ${Path} 资源存在`);
+            return this._Cache_AudioClip[Path];
+        }
+        const Time_Start = Date.now();
+        try {
+            return new Promise((resolve, reject) => {
+                this.Bundles.load(Path, AudioClip, (Err, Res: AudioClip) => {
+                    if (Err) {
+                        console.error("加载 Audio 失败:", Err);
+                        reject(Err);
+                        return;
+                    }
+                    this._Cache_AudioClip[Path] = Res;
+                    const Time_Finish = Date.now();
+                    const Time_Total = Time_Finish - Time_Start;
+                    console.debug(`加载 Audio ${Path} 成功: 总用时长: ${Time_Total} ms`);
+                    resolve(this._Cache_AudioClip[Path]);
+                    return;
+                });
+            });
+        } catch (Error) {
+            console.error(`加载 Audio ${Path} 错误: ${Error}`);
+            throw Error;
+        }
+    }
+    async Load_Material(Path: string): Promise<Material> {
+        if (this._Cache_Material[Path]) {
+            console.debug(`Material ${Path} 资源存在`);
+            return this._Cache_Material[Path];
+        }
+        const Time_Start = Date.now();
+        try {
+            return new Promise((resolve, reject) => {
+                this.Bundles.load(Path, Material, (Err, Res: Material) => {
+                    if (Err) {
+                        console.error("加载 Material 失败:", Err);
+                        reject(Err);
+                        return;
+                    }
+                    this._Cache_Material[Path] = Res;
+                    const Time_Finish = Date.now();
+                    const Time_Total = Time_Finish - Time_Start;
+                    console.debug(`加载 Material ${Path} 成功: 总用时长: ${Time_Total} ms`);
+                    resolve(this._Cache_Material[Path]);
+                    return;
+                });
+            });
+        } catch (Error) {
+            console.error(`加载 Material ${Path} 错误: ${Error}`);
+            throw Error;
+        }
+    }
+    async Load_Json(Path: string): Promise<JsonAsset> {
+        if (this._Cache_Json[Path]) {
+            console.debug(`Json ${Path} 资源存在`);
+            return this._Cache_Json[Path];
+        }
+        const Time_Start = Date.now();
+        try {
+            return new Promise((resolve, reject) => {
+                this.Bundles.load(Path, JsonAsset, (Err, Res: JsonAsset) => {
+                    if (Err) {
+                        console.error("加载 Json 失败:", Err);
+                        reject(Err);
+                        return;
+                    }
+                    this._Cache_Json[Path] = Res.json!;
+                    const Time_Finish = Date.now();
+                    const Time_Total = Time_Finish - Time_Start;
+                    console.debug(`加载 Json ${Path} 成功: 总用时长: ${Time_Total} ms`);
+                    resolve(this._Cache_Json[Path]);
+                    return;
+                });
+            });
+        } catch (Error) {
+            console.error(`加载 Json ${Path} 错误: ${Error}`);
+            throw Error;
+        }
+    }
+    async Load_AnimationClip(Path: string): Promise<AnimationClip> {
+        if (this._Cache_AnimationClip[Path]) {
+            console.debug(`AnimationClip ${Path} 资源存在`);
+            return this._Cache_AnimationClip[Path];
+        }
+        const Time_Start = Date.now();
+        try {
+            return new Promise((resolve, reject) => {
+                this.Bundles.load(Path, AnimationClip, (Err, Res: AnimationClip) => {
+                    if (Err) {
+                        console.error("加载 AnimationClip 失败:", Err);
+                        reject(Err);
+                        return;
+                    }
+                    this._Cache_AnimationClip[Path] = Res;
+                    const Time_Finish = Date.now();
+                    const Time_Total = Time_Finish - Time_Start;
+                    console.debug(`加载 AnimationClip ${Path} 成功: 总用时长: ${Time_Total} ms`);
+                    resolve(this._Cache_AnimationClip[Path]);
+                    return;
+                });
+            });
+        } catch (Error) {
+            console.error(`加载 AnimationClip ${Path} 错误: ${Error}`);
+            throw Error;
+        }
+    }
+    async Load_Font(Path: string): Promise<Font> {
+        if (this._Cache_Font[Path]) {
+            console.debug(`Font ${Path} 资源存在`);
+            return this._Cache_Font[Path];
+        }
+        const Time_Start = Date.now();
+        try {
+            return new Promise((resolve, reject) => {
+                this.Bundles.load(Path, Font, (Err, Res: Font) => {
+                    if (Err) {
+                        console.error("加载 Font 失败:", Err);
+                        reject(Err);
+                        return;
+                    }
+                    this._Cache_Font[Path] = Res;
+                    const Time_Finish = Date.now();
+                    const Time_Total = Time_Finish - Time_Start;
+                    console.debug(`加载 Font ${Path} 成功: 总用时长: ${Time_Total} ms`);
+                    resolve(this._Cache_Font[Path]);
+                    return;
+                });
+            });
+        } catch (Error) {
+            console.error(`加载 Font ${Path} 错误: ${Error}`);
+            throw Error;
+        }
+    }
+
+    /**释放资源 */
+    async Release_Resource(Path: string): Promise<void> {
+        if (this._Cache_Scene[Path]) {
+            delete this._Cache_Scene[Path];
+            console.debug(`释放 Scene ${Path} 资源`);
+        }
+        if (this._Cache_Prefab[Path]) {
+            delete this._Cache_Prefab[Path];
+            console.debug(`释放 Prefab ${Path} 资源`);
+        }
+        if (this._Cache_SpriteFrame[Path]) {
+            delete this._Cache_SpriteFrame[Path];
+            console.debug(`释放 SpriteFrame ${Path} 资源`);
+        }
+        if (this._Cache_Texture2D[Path]) {
+            delete this._Cache_Texture2D[Path];
+            console.debug(`释放 Texture ${Path} 资源`);
+        }
+        if (this._Cache_AudioClip[Path]) {
+            delete this._Cache_AudioClip[Path];
+            console.debug(`释放 Audio ${Path} 资源`);
+        }
+        if (this._Cache_Material[Path]) {
+            delete this._Cache_Material[Path];
+            console.debug(`释放 Material ${Path} 资源`);
+        }
+        if (this._Cache_Json[Path]) {
+            delete this._Cache_Json[Path];
+            console.debug(`释放 JSON ${Path} 资源`);
+        }
+        if (this._Cache_AnimationClip[Path]) {
+            delete this._Cache_AnimationClip[Path];
+            console.debug(`释放 AnimationClip ${Path} 资源`);
+        }
+        if (this._Cache_Font[Path]) {
+            delete this._Cache_Font[Path];
+            console.debug(`释放 Font ${Path} 资源`);
+        }
+    }
+    /**释放所有资源 */
+    async Release_Resource_All(): Promise<void> {
+        this._Cache_Scene = {};
+        this._Cache_Prefab = {};
+        this._Cache_SpriteFrame = {};
+        this._Cache_Texture2D = {};
+        this._Cache_AudioClip = {};
+        this._Cache_Material = {};
+        this._Cache_Json = {};
+        this._Cache_AnimationClip = {};
+        this._Cache_Font = {};
+        console.debug(`已释放所有资源`);
+    }
+
+    /** 游戏切换全屏模式 */
+    Game_Toggle_Fullscreen() {
+        if (!document.fullscreenElement) {
+            document.documentElement.requestFullscreen();
+            console.debug(`进入全屏`);
+        } else {
+            document.exitFullscreen();
+            console.debug(`退出全屏`);
+        }
+    }
+
+    /** 游戏界面缩放设置 */
+    Game_UIScale_Set(scale: number = 1) {
+        document.body.style.transform = `scale(${scale})`;
+    }
+
+    /**游戏重启$ */
+    Game_Restart() {
+        game.restart();
+    }
+    /**游戏恢复 */
+    Game_Resume() {
+        game.resume();
+    }
+    /**游戏暂停 */
+    Game_Pause() {
+        game.pause();
+    }
+    /**游戏结束 */
+    Game_End() {
+        game.end();
+    }
+    /**游戏帧率设置 */
+    Game_FrameRate_Set(FrameRate: number = 59) {
+        game.frameRate = FrameRate;
+    }
+
+
+    /**场景运行$ */
+    Director_Run(SceneAsset: Scene) {
+        director.runSceneImmediate(SceneAsset);
+    }
+    /**场景恢复$ */
+    Director_Resume() {
+        director.resume();
+    }
+    /**场景暂停$ */
+    Director_Pause() {
+        director.pause();
+    }
+    /**场景停止 */
+    Director_End() {
+        // director.end();
+    }
+    /**注册常驻根节点 */
+    Director_AddPersistRootNode(Node_Set: Node) {
+        director.addPersistRootNode(Node_Set);
+    }
+    /**注销常驻根节点 */
+    Director_RemovePersistRootNode(Node_Set: Node) {
+        director.removePersistRootNode(Node_Set);
+    }
+    /**场景调度间隔缩放设置 */
+    Director_Scheduler_TimeScale_Set(Scale: number = 1) {
+        director.getScheduler().setTimeScale(Scale);
+    }
+    /**场景调度间隔缩放获取 */
+    Director_Scheduler_TimeScale_Get(): number {
+        return director.getScheduler().getTimeScale();
+    }
+
+    /**信息打印 */
+    Information_Printing() {
+        console.debug(`当前平台是否是原生平台${sys.isNative}`);
+        console.debug(`当前平台是否是浏览器${sys.isBrowser}`);
+        console.debug(`当前运行平台是否是移动端平台${sys.isMobile}`);
+        console.debug(`当前平台字节顺序是否是小端序${sys.isLittleEndian}`);
+        console.debug(`当前运行平台是否是XR平台${sys.isXR}`);
+        this.Get_Current_Full_Time();
+    }
+
+
+    /**获取当前时间戳 */
+    Get_Timestamp(): number {
+        return Date.now();
+    }
+    /** 获取当前时间的 Unix 时间戳（秒） */
+    Get_Unix_Timestamp(): number {
+        return Math.floor(Date.now() / 1000); // 返回自1970年1月1日以来的秒数
+    }
+    /** 获取指定日期的时间戳 */
+    Get_Timestamp_From_Date(year, month, day): number {
+        const date = new Date(year, month - 1, day); // 注意月份从0开始
+        return date.getTime(); // 返回指定日期的时间戳
+    }
+    /** 获取两个时间戳之间的差值（毫秒） */
+    Get_Time_Difference(Start_Timestamp: number, Fnish_Timestamp: number): number {
+        return Fnish_Timestamp - Start_Timestamp; // 返回时间差
+    }
+    /** 获取当前年份 */
+    Get_Current_Year(): number {
+        return new Date().getFullYear(); // 返回当前年份
+    }
+    /** 获取当前月份 */
+    Get_Current_Month(): number {
+        return new Date().getMonth() + 1; // 返回当前月份
+    }
+    /** 获取当前日期 */
+    Get_Current_Date(): number {
+        return new Date().getDate();
+    }
+    /** 获取当前小时 */
+    Get_Current_Hour(): number {
+        return new Date().getHours();
+    }
+    /** 获取当前分钟 */
+    Get_Current_Minute(): number {
+        return new Date().getMinutes();
+    }
+    /** 获取当前秒 */
+    Get_Current_Second(): number {
+        return new Date().getSeconds();
+    }
+    /** 获取当前毫秒 */
+    Get_Current_Millisecond(): number {
+        return new Date().getMilliseconds();
+    }
+    /** 获取当前星期（0-6，0表示星期天） */
+    Get_Current_Day(): number {
+        if (new Date().getDay() == 0) return 7;
+        return new Date().getDay();
+    }
+    /** 获取完整的当前时间（包括年月日时分秒毫秒） */
+    Get_Current_Full_Time(): {
+        Year: number;
+        Month: number;
+        Date: number;
+        Hour: number;
+        Minute: number;
+        Second: number;
+        MilliSecond: number;
+        Day: number;
+    } {
+        const Current_Time = {
+            Year: this.Get_Current_Year(),
+            Month: this.Get_Current_Month(),
+            Date: this.Get_Current_Date(),
+            Hour: this.Get_Current_Hour(),
+            Minute: this.Get_Current_Minute(),
+            Second: this.Get_Current_Second(),
+            MilliSecond: this.Get_Current_Millisecond(),
+            Day: this.Get_Current_Day()
+        };
+        console.debug(`${Current_Time.Year}年${Current_Time.Month}月${Current_Time.Date}日 / 星期${Current_Time.Day} / ${Current_Time.Hour}时${Current_Time.Minute}分${Current_Time.Second}秒${Current_Time.MilliSecond}`);
+        return Current_Time;
+    }
+
+
+
+}
+
+
