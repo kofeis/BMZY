@@ -1,0 +1,11 @@
+{
+    "systemInfo": {
+        "arch": "x64",
+        "cpu": "Intel(R) Core(TM) i7-9750H CPU @ 2.60GHz",
+        "version": "Windows 11 Home China"
+    },
+    "sceneListMap": {
+        "1337c83e-a60a-4bf7-8248-c32ddb968856": "D:\\Cocos\\XHAT\\BMZY\\assets\\Load\\Scene\\Login.scene"
+    },
+    "deviceMd5": "af2f1c13679b82f52821f23b959d18d5"
+}

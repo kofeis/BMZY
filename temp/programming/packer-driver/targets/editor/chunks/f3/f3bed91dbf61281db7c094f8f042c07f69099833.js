@@ -1,20 +1,10 @@
-System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2"], function (_export, _context) {
+System.register(["cc"], function (_export, _context) {
   "use strict";
 
-  var _reporterNs, _cclegacy, __checkObsolete__, __checkObsoleteInNamespace__, _decorator, Component, RigidBody2D, v2, Tool_Other, Tool_Event, _dec, _class, _class2, _crd, ccclass, property, Tool_RigidBody;
-
-  function _reportPossibleCrUseOfTool_Other(extras) {
-    _reporterNs.report("Tool_Other", "./Tool_Other", _context.meta, extras);
-  }
-
-  function _reportPossibleCrUseOfTool_Event(extras) {
-    _reporterNs.report("Tool_Event", "./Tool_Event", _context.meta, extras);
-  }
+  var _cclegacy, __checkObsolete__, __checkObsoleteInNamespace__, _decorator, Component, RigidBody2D, v2, _dec, _class, _class2, _crd, ccclass, property, Tool_RigidBody;
 
   return {
-    setters: [function (_unresolved_) {
-      _reporterNs = _unresolved_;
-    }, function (_cc) {
+    setters: [function (_cc) {
       _cclegacy = _cc.cclegacy;
       __checkObsolete__ = _cc.__checkObsolete__;
       __checkObsoleteInNamespace__ = _cc.__checkObsoleteInNamespace__;
@@ -22,10 +12,6 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2"], fu
       Component = _cc.Component;
       RigidBody2D = _cc.RigidBody2D;
       v2 = _cc.v2;
-    }, function (_unresolved_2) {
-      Tool_Other = _unresolved_2.Tool_Other;
-    }, function (_unresolved_3) {
-      Tool_Event = _unresolved_3.Tool_Event;
     }],
     execute: function () {
       _crd = true;
@@ -40,190 +26,221 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2"], fu
       } = _decorator);
 
       _export("Tool_RigidBody", Tool_RigidBody = (_dec = ccclass('Tool_RigidBody'), _dec(_class = (_class2 = class Tool_RigidBody extends Component {
-        /**设置线性速度 */
-        Set_Linear_Velocity(Node_Set, X = 0, Y = 0) {
-          let Component_RigidBody = Node_Set.getComponent(RigidBody2D);
+        /**
+         * 创建刚体组件（如已存在则返回原组件）
+         * @param Node_Set 目标节点
+         * @param Type 刚体类型 0:Dynamic 1:Static 2:Kinematic，默认0
+         * @returns RigidBody2D
+         * @example
+         * Tool_RigidBody.Create_RigidBody(node, 0)
+         */
+        static Create_RigidBody(Node_Set, Type = 0) {
+          let Component_RigidBody2D = Node_Set.getComponent(RigidBody2D);
 
-          if (!(_crd && Tool_Other === void 0 ? (_reportPossibleCrUseOfTool_Other({
-            error: Error()
-          }), Tool_Other) : Tool_Other).instance.Get_Type_Is_Abnormal(Component_RigidBody)) {
-            return;
+          if (!Component_RigidBody2D) {
+            Component_RigidBody2D = Node_Set.addComponent(RigidBody2D);
           }
 
-          Component_RigidBody.linearVelocity = v2(X, Y);
-        }
-        /**设置线性速度 */
-
-
-        Set_Linear_Velocity_X(Node_Set, X = 0) {
-          let Component_RigidBody = Node_Set.getComponent(RigidBody2D);
-
-          if (!(_crd && Tool_Other === void 0 ? (_reportPossibleCrUseOfTool_Other({
-            error: Error()
-          }), Tool_Other) : Tool_Other).instance.Get_Type_Is_Abnormal(Component_RigidBody)) {
-            return;
-          }
-
-          Component_RigidBody.linearVelocity = v2(X, Component_RigidBody.linearVelocity.y);
-        }
-        /**设置线性速度 */
-
-
-        Set_Linear_Velocity_Y(Node_Set, Y = 0) {
-          let Component_RigidBody = Node_Set.getComponent(RigidBody2D);
-
-          if (!(_crd && Tool_Other === void 0 ? (_reportPossibleCrUseOfTool_Other({
-            error: Error()
-          }), Tool_Other) : Tool_Other).instance.Get_Type_Is_Abnormal(Component_RigidBody)) {
-            return;
-          }
-
-          Component_RigidBody.linearVelocity = v2(Component_RigidBody.linearVelocity.x, Y);
-        }
-        /**销毁刚体(动态) */
-
-
-        Collider_Destroy(Node_Set) {
-          (_crd && Tool_Event === void 0 ? (_reportPossibleCrUseOfTool_Event({
-            error: Error()
-          }), Tool_Event) : Tool_Event).instance.Off_Collider(Node_Set);
-          let Component_RigidBody = Node_Set.getComponent(RigidBody2D);
-
-          if (!(_crd && Tool_Other === void 0 ? (_reportPossibleCrUseOfTool_Other({
-            error: Error()
-          }), Tool_Other) : Tool_Other).instance.Get_Type_Is_Abnormal(Component_RigidBody)) {
-            return;
-          }
-
-          Component_RigidBody.linearVelocity = v2(0, 0);
-          this.scheduleOnce(() => {
-            Node_Set.destroy();
-          });
-        }
-        /**刚体隐藏 */
-
-
-        Collider_Hide(Node_Set) {
-          // Tool_Event.instance.Off_Collider(Node_Set);
-          let Component_RigidBody = Node_Set.getComponent(RigidBody2D);
-
-          if (!(_crd && Tool_Other === void 0 ? (_reportPossibleCrUseOfTool_Other({
-            error: Error()
-          }), Tool_Other) : Tool_Other).instance.Get_Type_Is_Abnormal(Component_RigidBody)) {
-            return;
-          }
-
-          Component_RigidBody.linearVelocity = v2(0, 0);
-          this.scheduleOnce(() => {
-            Node_Set.active = false;
-          });
-        }
-        /**刚体显示 */
-
-
-        Collider_Show(Node_Set) {
-          (_crd && Tool_Event === void 0 ? (_reportPossibleCrUseOfTool_Event({
-            error: Error()
-          }), Tool_Event) : Tool_Event).instance.Off_Collider(Node_Set);
-          let Component_RigidBody = Node_Set.getComponent(RigidBody2D);
-
-          if (!(_crd && Tool_Other === void 0 ? (_reportPossibleCrUseOfTool_Other({
-            error: Error()
-          }), Tool_Other) : Tool_Other).instance.Get_Type_Is_Abnormal(Component_RigidBody)) {
-            return;
-          }
-
-          Component_RigidBody.enabled = false;
-          Component_RigidBody.linearVelocity = v2(0, 0);
-          Node_Set.active = true;
-          this.scheduleOnce(() => {
-            Component_RigidBody.enabled = true;
-          });
+          Component_RigidBody2D.type = Type;
+          return Component_RigidBody2D;
         }
         /**
-        * 安全地改变刚体的 active 状态
-        * @param {cc.Node} node - 需要改变 active 状态的节点
-        * @param {boolean} isActive - 要设置的 active 状态
-        */
+         * 销毁刚体组件（延迟到下一帧，避免物理系统引用导致报错）
+         * @param Node_Set 目标节点
+         * @example
+         * Tool_RigidBody.Destroy_RigidBody(node)
+         */
 
 
-        setRigidBodyActive(node, isActive) {
-          // 检查节点是否存在
-          if (!node || !node.isValid) {
-            console.error("节点不存在或无效:", node);
-            return;
-          } // 检查节点是否有刚体组件
+        static Destroy_RigidBody(Node_Set) {
+          let Component_RigidBody2D = Node_Set.getComponent(RigidBody2D);
 
-
-          const rigidBody = node.getComponent(RigidBody2D);
-
-          if (!rigidBody) {
-            console.error("节点没有刚体组件:", node);
-            return;
-          } // 设置节点的 active 状态
-
-
-          try {
-            node.active = isActive;
-            console.log(`节点 ${node.name} 的 active 状态已设置为 ${isActive}`);
-          } catch (error) {
-            console.error("设置 active 状态时发生错误：", error);
+          if (Component_RigidBody2D) {
+            // 延迟到下一帧移除，避免物理系统本帧引用导致报错
+            if (Node_Set.scheduleOnce) {
+              Node_Set.scheduleOnce(() => {
+                if (Component_RigidBody2D.isValid && Node_Set.isValid) {
+                  Node_Set.removeComponent(Component_RigidBody2D);
+                }
+              }, 0);
+            } else {
+              // 兼容非组件节点（如 scheduleOnce 不存在时）
+              setTimeout(() => {
+                if (Component_RigidBody2D.isValid && Node_Set.isValid) {
+                  Node_Set.removeComponent(Component_RigidBody2D);
+                }
+              }, 0);
+            }
           }
         }
-        /**刚体停止 */
+        /**
+         * 设置线性速度
+         * @param Node_Set 目标节点
+         * @param X x轴速度
+         * @param Y y轴速度
+         * @example
+         * Tool_RigidBody.Set_Linear_Velocity(node, 10, 0)
+         */
 
 
-        Collider_Stop(Node_Set) {
-          let Component_RigidBody = Node_Set.getComponent(RigidBody2D);
-
-          if (!(_crd && Tool_Other === void 0 ? (_reportPossibleCrUseOfTool_Other({
-            error: Error()
-          }), Tool_Other) : Tool_Other).instance.Get_Type_Is_Abnormal(Component_RigidBody)) {
-            return;
-          }
-
-          Component_RigidBody.gravityScale = 0;
-          Component_RigidBody.linearVelocity = v2(0, 0);
+        static Set_Linear_Velocity(Node_Set, X = 0, Y = 0) {
+          let Component_RigidBody2D = Node_Set.getComponent(RigidBody2D);
+          if (!Component_RigidBody2D) return;
+          Component_RigidBody2D.linearVelocity = v2(X, Y);
         }
-        /**刚体恢复 */
+        /**
+         * 获取线性速度
+         * @param Node_Set 目标节点
+         * @returns Vec2
+         * @example
+         * Tool_RigidBody.Get_Linear_Velocity(node)
+         */
 
 
-        Collider_Recover(Node_Set, Gravity_Scale = 1) {
-          let Component_RigidBody = Node_Set.getComponent(RigidBody2D);
-
-          if (!(_crd && Tool_Other === void 0 ? (_reportPossibleCrUseOfTool_Other({
-            error: Error()
-          }), Tool_Other) : Tool_Other).instance.Get_Type_Is_Abnormal(Component_RigidBody)) {
-            return;
-          }
-
-          Component_RigidBody.gravityScale = Gravity_Scale;
+        static Get_Linear_Velocity(Node_Set) {
+          let Component_RigidBody2D = Node_Set.getComponent(RigidBody2D);
+          if (!Component_RigidBody2D) return null;
+          return Component_RigidBody2D.linearVelocity;
         }
-        /**施加力 */
+        /**
+         * 设置角速度
+         * @param Node_Set 目标节点
+         * @param AngularVelocity 角速度
+         * @example
+         * Tool_RigidBody.Set_Angular_Velocity(node, 5)
+         */
 
 
-        Collider_ApplyForce(Node_Set, Force) {
-          let Component_RigidBody = Node_Set.getComponent(RigidBody2D);
-
-          if (!(_crd && Tool_Other === void 0 ? (_reportPossibleCrUseOfTool_Other({
-            error: Error()
-          }), Tool_Other) : Tool_Other).instance.Get_Type_Is_Abnormal(Component_RigidBody)) {
-            return;
-          }
-
-          Component_RigidBody.applyForce(Force, v2(0, 0), true);
+        static Set_Angular_Velocity(Node_Set, AngularVelocity = 0) {
+          let Component_RigidBody2D = Node_Set.getComponent(RigidBody2D);
+          if (!Component_RigidBody2D) return;
+          Component_RigidBody2D.angularVelocity = AngularVelocity;
         }
+        /**
+         * 获取角速度
+         * @param Node_Set 目标节点
+         * @returns number
+         * @example
+         * Tool_RigidBody.Get_Angular_Velocity(node)
+         */
 
-        Collider_Sleep(Node_Set) {
-          let Component_RigidBody = Node_Set.getComponent(RigidBody2D);
 
-          if (!(_crd && Tool_Other === void 0 ? (_reportPossibleCrUseOfTool_Other({
-            error: Error()
-          }), Tool_Other) : Tool_Other).instance.Get_Type_Is_Abnormal(Component_RigidBody)) {
-            return;
-          }
+        static Get_Angular_Velocity(Node_Set) {
+          let Component_RigidBody2D = Node_Set.getComponent(RigidBody2D);
+          if (!Component_RigidBody2D) return null;
+          return Component_RigidBody2D.angularVelocity;
+        }
+        /**
+         * 施加力
+         * @param Node_Set 目标节点
+         * @param Force 力
+         * @param Point 作用点（可选，默认中心）
+         * @example
+         * Tool_RigidBody.Apply_Force(node, v2(100,0))
+         */
 
-          Component_RigidBody.sleep();
+
+        static Apply_Force(Node_Set, Force, Point) {
+          let Component_RigidBody2D = Node_Set.getComponent(RigidBody2D);
+          if (!Component_RigidBody2D) return;
+          Component_RigidBody2D.applyForce(Force, Point || v2(0, 0), true);
+        }
+        /**
+         * 施加线性冲量
+         * @param Node_Set 目标节点
+         * @param Impulse 冲量
+         * @param Point 作用点（可选，默认中心）
+         * @example
+         * Tool_RigidBody.Apply_Linear_Impulse(node, v2(10,0))
+         */
+
+
+        static Apply_Linear_Impulse(Node_Set, Impulse, Point) {
+          let Component_RigidBody2D = Node_Set.getComponent(RigidBody2D);
+          if (!Component_RigidBody2D) return;
+          Component_RigidBody2D.applyLinearImpulse(Impulse, Point || v2(0, 0), true);
+        }
+        /**
+         * 施加扭矩
+         * @param Node_Set 目标节点
+         * @param Torque 扭矩
+         * @example
+         * Tool_RigidBody.Apply_Torque(node, 5)
+         */
+
+
+        static Apply_Torque(Node_Set, Torque) {
+          let Component_RigidBody2D = Node_Set.getComponent(RigidBody2D);
+          if (!Component_RigidBody2D) return;
+          Component_RigidBody2D.applyTorque(Torque, true);
+        }
+        /**
+         * 唤醒刚体
+         * @param Node_Set 目标节点
+         * @example
+         * Tool_RigidBody.Wake_Up(node)
+         */
+
+
+        static Wake_Up(Node_Set) {
+          let Component_RigidBody2D = Node_Set.getComponent(RigidBody2D);
+          if (!Component_RigidBody2D) return;
+          Component_RigidBody2D.wakeUp();
+        }
+        /**
+         * 休眠刚体
+         * @param Node_Set 目标节点
+         * @example
+         * Tool_RigidBody.Sleep(node)
+         */
+
+
+        static Sleep(Node_Set) {
+          let Component_RigidBody2D = Node_Set.getComponent(RigidBody2D);
+          if (!Component_RigidBody2D) return;
+          Component_RigidBody2D.sleep();
+        }
+        /**
+         * 判断刚体是否休眠
+         * @param Node_Set 目标节点
+         * @returns boolean
+         * @example
+         * Tool_RigidBody.Is_Sleeping(node)
+         */
+
+
+        static Is_Sleeping(Node_Set) {
+          let Component_RigidBody2D = Node_Set.getComponent(RigidBody2D);
+          if (!Component_RigidBody2D) return false;
+          return Component_RigidBody2D.isAwake() === false;
+        }
+        /**
+         * 重置刚体速度（线性和角速度都归零）
+         * @param Node_Set 目标节点
+         * @example
+         * Tool_RigidBody.Reset_Velocity(node)
+         */
+
+
+        static Reset_Velocity(Node_Set) {
+          let Component_RigidBody2D = Node_Set.getComponent(RigidBody2D);
+          if (!Component_RigidBody2D) return;
+          Component_RigidBody2D.linearVelocity = v2(0, 0);
+          Component_RigidBody2D.angularVelocity = 0;
+        }
+        /**
+         * 设置刚体类型（0:动态 1:静态 2:运动学）
+         * @param Node_Set 目标节点
+         * @param Type 类型 0:Dynamic 1:Static 2:Kinematic
+         * @example
+         * Tool_RigidBody.Set_Body_Type(node, 0)
+         */
+
+
+        static Set_Body_Type(Node_Set, Type) {
+          let Component_RigidBody2D = Node_Set.getComponent(RigidBody2D);
+          if (!Component_RigidBody2D) return;
+          Component_RigidBody2D.type = Type;
         }
 
       }, _class2.instance = new _class2(), _class2)) || _class));

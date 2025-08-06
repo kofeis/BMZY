@@ -1,7 +1,7 @@
 {
   "modules": {
     "cce:/internal/x/cc": {
-      "mTimestamp": 14608.9439,
+      "mTimestamp": 15372.5518,
       "chunkId": "93ba276ea7b26ffcdc433fab14afc1ed6f05647b",
       "imports": [
         {
@@ -556,7 +556,7 @@
       ]
     },
     "cce:/internal/x/prerequisite-imports": {
-      "mTimestamp": 32520.0771,
+      "mTimestamp": 439979.1003,
       "chunkId": "6d8fd2b0177941b032ddc0733af48a561fb60657",
       "imports": [
         {
@@ -994,7 +994,7 @@
           }
         },
         {
-          "value": "file:///D:/Cocos/XHAT/BMZY/assets/Script/Tool/Tool_UI.ts",
+          "value": "file:///D:/Cocos/XHAT/BMZY/assets/Script/Tool/Tool_Type.ts",
           "resolved": "__unresolved_31",
           "loc": {
             "start": {
@@ -1003,12 +1003,12 @@
             },
             "end": {
               "line": 35,
-              "column": 65
+              "column": 67
             }
           }
         },
         {
-          "value": "file:///D:/Cocos/XHAT/BMZY/assets/Script/UI/Bg.ts",
+          "value": "file:///D:/Cocos/XHAT/BMZY/assets/Script/Tool/Tool_UI.ts",
           "resolved": "__unresolved_32",
           "loc": {
             "start": {
@@ -1017,12 +1017,12 @@
             },
             "end": {
               "line": 36,
-              "column": 58
+              "column": 65
             }
           }
         },
         {
-          "value": "file:///D:/Cocos/XHAT/BMZY/assets/Script/UI/ScreenArea.ts",
+          "value": "file:///D:/Cocos/XHAT/BMZY/assets/Script/UI/Bg.ts",
           "resolved": "__unresolved_33",
           "loc": {
             "start": {
@@ -1031,12 +1031,12 @@
             },
             "end": {
               "line": 37,
-              "column": 66
+              "column": 58
             }
           }
         },
         {
-          "value": "file:///D:/Cocos/editors/Creator/3.8.6/resources/resources/3d/engine/editor/assets/default_renderpipeline/builtin-dof-pass.ts",
+          "value": "file:///D:/Cocos/XHAT/BMZY/assets/Script/UI/ScreenArea.ts",
           "resolved": "__unresolved_34",
           "loc": {
             "start": {
@@ -1045,12 +1045,12 @@
             },
             "end": {
               "line": 38,
-              "column": 134
+              "column": 66
             }
           }
         },
         {
-          "value": "file:///D:/Cocos/editors/Creator/3.8.6/resources/resources/3d/engine/editor/assets/default_renderpipeline/builtin-pipeline-pass.ts",
+          "value": "file:///D:/Cocos/editors/Creator/3.8.6/resources/resources/3d/engine/editor/assets/default_renderpipeline/builtin-dof-pass.ts",
           "resolved": "__unresolved_35",
           "loc": {
             "start": {
@@ -1059,12 +1059,12 @@
             },
             "end": {
               "line": 39,
-              "column": 139
+              "column": 134
             }
           }
         },
         {
-          "value": "file:///D:/Cocos/editors/Creator/3.8.6/resources/resources/3d/engine/editor/assets/default_renderpipeline/builtin-pipeline-settings.ts",
+          "value": "file:///D:/Cocos/editors/Creator/3.8.6/resources/resources/3d/engine/editor/assets/default_renderpipeline/builtin-pipeline-pass.ts",
           "resolved": "__unresolved_36",
           "loc": {
             "start": {
@@ -1073,12 +1073,12 @@
             },
             "end": {
               "line": 40,
-              "column": 143
+              "column": 139
             }
           }
         },
         {
-          "value": "file:///D:/Cocos/editors/Creator/3.8.6/resources/resources/3d/engine/editor/assets/default_renderpipeline/builtin-pipeline-types.ts",
+          "value": "file:///D:/Cocos/editors/Creator/3.8.6/resources/resources/3d/engine/editor/assets/default_renderpipeline/builtin-pipeline-settings.ts",
           "resolved": "__unresolved_37",
           "loc": {
             "start": {
@@ -1087,12 +1087,12 @@
             },
             "end": {
               "line": 41,
-              "column": 140
+              "column": 143
             }
           }
         },
         {
-          "value": "file:///D:/Cocos/editors/Creator/3.8.6/resources/resources/3d/engine/editor/assets/default_renderpipeline/builtin-pipeline.ts",
+          "value": "file:///D:/Cocos/editors/Creator/3.8.6/resources/resources/3d/engine/editor/assets/default_renderpipeline/builtin-pipeline-types.ts",
           "resolved": "__unresolved_38",
           "loc": {
             "start": {
@@ -1101,12 +1101,12 @@
             },
             "end": {
               "line": 42,
-              "column": 134
+              "column": 140
             }
           }
         },
         {
-          "value": "file:///D:/Cocos/editors/Creator/3.8.6/resources/resources/3d/engine/editor/assets/tools/debug-view-runtime-control.ts",
+          "value": "file:///D:/Cocos/editors/Creator/3.8.6/resources/resources/3d/engine/editor/assets/default_renderpipeline/builtin-pipeline.ts",
           "resolved": "__unresolved_39",
           "loc": {
             "start": {
@@ -1115,6 +1115,20 @@
             },
             "end": {
               "line": 43,
+              "column": 134
+            }
+          }
+        },
+        {
+          "value": "file:///D:/Cocos/editors/Creator/3.8.6/resources/resources/3d/engine/editor/assets/tools/debug-view-runtime-control.ts",
+          "resolved": "__unresolved_40",
+          "loc": {
+            "start": {
+              "line": 44,
+              "column": 7
+            },
+            "end": {
+              "line": 44,
               "column": 127
             }
           }
@@ -1336,6 +1350,13 @@
           "resolved": {
             "type": "module",
             "url": "file:///D:/Cocos/XHAT/BMZY/assets/Script/Tool/Tool_RigidBody.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///D:/Cocos/XHAT/BMZY/assets/Script/Tool/Tool_Type.ts"
           },
           "messages": []
         },
@@ -7033,7 +7054,7 @@
       ]
     },
     "cce:/internal/code-quality/cr.mjs": {
-      "mTimestamp": 1752113961690,
+      "mTimestamp": 1754466328793,
       "chunkId": "6a5019a719a9014c047e67aa1cf34453ab8392ce",
       "imports": [],
       "type": "esm",
@@ -7565,7 +7586,7 @@
       ]
     },
     "cce:/internal/ml/cjs-loader.mjs": {
-      "mTimestamp": 1752113961690,
+      "mTimestamp": 1754466328793,
       "chunkId": "a0d063530de23ddade53e1a935bf64c81277c061",
       "imports": [],
       "type": "esm",
@@ -29294,47 +29315,17 @@
     },
     "file:///D:/Cocos/XHAT/BMZY/assets/Script/Tool/Tool_Console.ts": {
       "mTimestamp": {
-        "mtime": 1745595388000,
+        "mtime": 1754466764018.152,
         "uuid": "0d06da96-9f37-4a86-af02-9a969d19e848"
       },
       "chunkId": "557aa888648cce7ee9ce3c49081cd353787a9ed1",
       "imports": [
         {
           "value": "cc"
-        },
-        {
-          "value": "cc"
-        },
-        {
-          "value": "cc",
-          "loc": {
-            "start": {
-              "line": 1,
-              "column": 58
-            },
-            "end": {
-              "line": 1,
-              "column": 62
-            }
-          }
         }
       ],
       "type": "esm",
       "resolutions": [
-        {
-          "resolved": {
-            "type": "module",
-            "url": "cce:/internal/x/cc"
-          },
-          "messages": []
-        },
-        {
-          "resolved": {
-            "type": "module",
-            "url": "cce:/internal/x/cc"
-          },
-          "messages": []
-        },
         {
           "resolved": {
             "type": "module",
@@ -29503,7 +29494,7 @@
     },
     "file:///D:/Cocos/XHAT/BMZY/assets/Script/Tool/Tool_Other.ts": {
       "mTimestamp": {
-        "mtime": 1748225654000,
+        "mtime": 1754466621413.7117,
         "uuid": "c35be2fa-a278-4026-b374-69449d0eb738"
       },
       "chunkId": "adbc3b027c5eecdc204351647015d89d0c5081f1",
@@ -29555,15 +29546,11 @@
     },
     "file:///D:/Cocos/XHAT/BMZY/assets/Script/Tool/Tool_RigidBody.ts": {
       "mTimestamp": {
-        "mtime": 1745732916000,
+        "mtime": 1752220690786.0813,
         "uuid": "bf6f1e24-b5ef-4ea9-85d7-d9625358cbdb"
       },
       "chunkId": "f3bed91dbf61281db7c094f8f042c07f69099833",
       "imports": [
-        {
-          "value": "cce:/internal/code-quality/cr.mjs",
-          "resolved": "__unresolved_0"
-        },
         {
           "value": "cc"
         },
@@ -29582,34 +29569,6 @@
               "column": 97
             }
           }
-        },
-        {
-          "value": "./Tool_Other",
-          "resolved": "__unresolved_1",
-          "loc": {
-            "start": {
-              "line": 2,
-              "column": 27
-            },
-            "end": {
-              "line": 2,
-              "column": 41
-            }
-          }
-        },
-        {
-          "value": "./Tool_Event",
-          "resolved": "__unresolved_2",
-          "loc": {
-            "start": {
-              "line": 3,
-              "column": 27
-            },
-            "end": {
-              "line": 3,
-              "column": 41
-            }
-          }
         }
       ],
       "type": "esm",
@@ -29617,13 +29576,6 @@
         {
           "resolved": {
             "type": "module",
-            "url": "cce:/internal/code-quality/cr.mjs"
-          },
-          "messages": []
-        },
-        {
-          "resolved": {
-            "type": "module",
             "url": "cce:/internal/x/cc"
           },
           "messages": []
@@ -29639,20 +29591,6 @@
           "resolved": {
             "type": "module",
             "url": "cce:/internal/x/cc"
-          },
-          "messages": []
-        },
-        {
-          "resolved": {
-            "type": "module",
-            "url": "file:///D:/Cocos/XHAT/BMZY/assets/Script/Tool/Tool_Other.ts"
-          },
-          "messages": []
-        },
-        {
-          "resolved": {
-            "type": "module",
-            "url": "file:///D:/Cocos/XHAT/BMZY/assets/Script/Tool/Tool_Event.ts"
           },
           "messages": []
         }
@@ -30031,6 +29969,58 @@
           "resolved": {
             "type": "module",
             "url": "cce:/internal/ml/cjs-loader.mjs"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///D:/Cocos/XHAT/BMZY/assets/Script/Tool/Tool_Type.ts": {
+      "mTimestamp": {
+        "mtime": 1752219674154.7588,
+        "uuid": "0897ead9-3b9f-4685-a483-fac0a585bff1"
+      },
+      "chunkId": "90051b50917a4f3629e5eaca4e0642595ba0afdf",
+      "imports": [
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 48
+            },
+            "end": {
+              "line": 1,
+              "column": 52
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
           },
           "messages": []
         }

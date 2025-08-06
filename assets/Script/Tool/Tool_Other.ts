@@ -8,6 +8,42 @@ export class Tool_Other extends Component {
 
     public static readonly instance = new Tool_Other();
 
+
+
+    /**
+     * 判断值类型是否异常
+     * @param Value 任意值
+     * @returns true 正常，false 异常
+     */
+    Get_Type_Is_Abnormal(Value: any): boolean {
+        // null、undefined、NaN
+        if (Value == null) {
+            console.debug("类型异常: 值为null或undefined");
+            return false;
+        }
+        if (typeof Value === 'number' && isNaN(Value)) {
+            console.debug("类型异常: 值为NaN");
+            return false;
+        }
+        // 空字符串
+        if (typeof Value === 'string' && Value.trim() === "") {
+            console.debug("类型异常: 空字符串");
+            return false;
+        }
+        // 空数组
+        if (Array.isArray(Value) && Value.length === 0) {
+            console.debug("类型异常: 空数组");
+            return false;
+        }
+        // 空对象（非数组、非null）
+        if (typeof Value === 'object' && !Array.isArray(Value) && Object.keys(Value).length === 0) {
+            console.debug("类型异常: 空对象");
+            return false;
+        }
+        // 其他类型（如函数、布尔值、非空对象/数组/字符串/数字）视为正常
+        return true;
+    }
+
     /**验证手机号 */
     isPhone(str: string) {
         return reg_phone.test(str);
@@ -42,30 +78,6 @@ export class Tool_Other extends Component {
             }
         }
         if (_d > maxDay || _d <= 0) return false;
-        return true;
-    }
-
-    /**获取类型是否异常
-    *@true 正常
-    *@false 异常
-    */
-    Get_Type_Is_Abnormal(Value: any): boolean {
-        // 检查 null 和 undefined
-        if (Value === null || Value === undefined) {
-            console.log("类型异常");
-            return false;
-        }
-        // 检查 NaN
-        if (typeof Value === 'number' && isNaN(Value)) {
-            console.log("类型异常");
-            return false;
-        }
-        // 检查空字符串、空对象和空数组
-        if (Value === "" || (typeof Value === 'object' && Object.keys(Value).length === 0)) {
-            console.log("类型异常");
-            return false;
-        }
-        // 如果通过所有检查，返回 true，表示正常
         return true;
     }
 
@@ -114,7 +126,7 @@ export class Tool_Other extends Component {
         // 参数校验
         if (Min > Max) {
             console.debug(`Min:${Min} 必须小于或等于 Max:${Max}`);
-            return
+            return []; // 返回空数组
         }
         // 计算范围
         const Range = Max - Min + 1;

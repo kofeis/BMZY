@@ -77377,5 +77377,10 @@
       ]
     },
     "versionCode": 1
+  },
+  "0897ead9-3b9f-4685-a483-fac0a585bff1": {
+    "url": "db://assets/Script/Tool/Tool_Type.ts",
+    "value": {},
+    "versionCode": 1
   }
 }
